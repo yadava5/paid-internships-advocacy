@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Join the movement to make all internships paid. Explore data, real stories, and resources advocating for fair internship compensation." />
+  <meta name="author" content="Ayush Yadav" />
+  <meta name="keywords" content="paid internships, unpaid internships, college students, fair compensation, internship reform" />
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Paid Internships Now" />
+  <meta property="og:description" content="Join the movement to make all internships paid. Experience shouldn't cost you." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://images.pexels.com/photos/1595385/pexels-photo-1595385.jpeg" />
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Paid Internships Now" />
+  <meta name="twitter:description" content="Join the movement to make all internships paid." />
+  
+  <title>Paid Internships Now</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='14' font-size='14'>💰</text></svg>" type="image/svg+xml" />
+
+  <!-- Bootstrap & Icons via free CDNs -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="assets/css/custom.css" />
+</head>
+<body>
+  <!-- Skip to main content for accessibility -->
+  <a href="#main-content" class="visually-hidden-focusable position-absolute bg-primary text-white p-2">Skip to main content</a>
+
+  <!-- ===== Nav ========================================================= -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">
+        <i class="bi bi-cash-coin me-1"></i>Paid Internships Now
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+        aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div id="mainNav" class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="stories.html">Stories</a></li>
+          <li class="nav-item"><a class="nav-link" href="data.html">Data</a></li>
+          <li class="nav-item"><a class="nav-link" href="survey.html">Survey</a></li>
+          <li class="nav-item"><a class="nav-link" href="legal.html">Legal</a></li>
+          <li class="nav-item"><a class="nav-link" href="involved.html">Get Involved</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== Hero - Full Screen ========================================== -->
+  <header id="main-content" class="bg-dark text-white text-center hero-section">
+    <div class="hero-full">
+      <div class="container">
+        <h1 class="display-1 fw-bold hero-title scroll-reveal">Experience Shouldn't Cost You</h1>
+        <p class="lead hero-subtitle scroll-reveal" data-delay="200">Join the movement to make <span class="text-warning fw-bold">all</span> internships paid.</p>
+        <div class="hero-cta scroll-reveal" data-delay="400">
+          <a href="data.html" class="btn btn-warning btn-lg me-3">See the Data</a>
+          <a href="survey.html" class="btn btn-outline-light btn-lg">Share Your Story</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== Impact Stat - Scroll Reveal ================================= -->
+  <section class="impact-stat-section">
+    <div class="container">
+      <div class="impact-content text-center">
+        <p class="impact-label scroll-reveal">Paid interns start at</p>
+        <h2 class="impact-number scroll-reveal" data-delay="200">
+          <span id="salaryDiff" data-target="20000">$0</span>
+        </h2>
+        <p class="impact-sublabel scroll-reveal" data-delay="400">more than unpaid interns</p>
+        <p class="impact-source scroll-reveal" data-delay="600">Source: National Association of Colleges and Employers (Class of 2022)</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Teaser cards =============================================== -->
+  <section class="cards-section py-5">
+    <div class="container">
+      <div class="row g-4">
+        <!-- Stories card -->
+        <div class="col-md-4 scroll-reveal" data-delay="0">
+          <div class="card h-100 shadow-sm">
+            <img src="https://images.pexels.com/photos/1595385/pexels-photo-1595385.jpeg" 
+                loading="lazy" class="card-img-top" alt="Students working together" />
+            <div class="card-body d-flex flex-column">
+              <h3 class="card-title h5">Real-Life Stories</h3>
+              <p class="card-text">Hear how unpaid internships shut out talented students—then share your own.</p>
+              <a href="stories.html" class="btn btn-primary mt-auto">Explore Stories</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Data card with mini Access Equity chart -->
+        <div class="col-md-4 scroll-reveal" data-delay="150">
+          <div class="card h-100 shadow-sm">
+            <div class="card-img-top d-flex align-items-center justify-content-center bg-dark" style="height:200px;">
+              <canvas id="miniAccessChart" style="max-height:180px;"></canvas>
+            </div>
+            <div class="card-body d-flex flex-column">
+              <h3 class="card-title h5">The Data</h3>
+              <p class="card-text">Explore interactive charts on pay equity, offer rates, and industry breakdowns.</p>
+              <a href="data.html" class="btn btn-primary mt-auto">View Charts</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Legal card -->
+        <div class="col-md-4 scroll-reveal" data-delay="300">
+          <div class="card h-100 shadow-sm">
+            <img src="https://images.pexels.com/photos/5668869/pexels-photo-5668869.jpeg" 
+                loading="lazy" class="card-img-top" alt="Legal scales" />
+            <div class="card-body d-flex flex-column">
+              <h3 class="card-title h5">Know Your Rights</h3>
+              <p class="card-text">Understand FLSA rules and what makes an unpaid internship legal (or not).</p>
+              <a href="legal.html" class="btn btn-primary mt-auto">Learn the Law</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Footer ====================================================== -->
+  <footer class="bg-dark text-white text-center py-4">
+    <div class="container">
+      <div class="mb-2">
+        <span class="badge bg-info text-dark me-2">🎓 ENG109 Final Project</span>
+        <span class="badge bg-secondary">Miami University, Oxford, Ohio</span>
+      </div>
+      <small>© 2025 Paid Internships Now · Created by Ayush Yadav</small>
+    </div>
+  </footer>
+  
+  <!-- Scroll to Top Button -->
+  <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" id="scrollTopBtn"
+    class="btn btn-primary rounded-circle position-fixed" 
+    style="bottom: 30px; right: 30px; width: 50px; height: 50px; display: none; z-index: 1000;"
+    aria-label="Scroll to top">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <!-- ===== Scripts ===================================================== -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script src="js/counters.js" defer></script>
+  <script src="js/nav.js" defer></script>
+  <script src="js/effects.js" defer></script>
+  <script src="js/homeMiniChart.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
+  
+  <!-- Scroll to top button visibility -->
+  <script>
+    window.addEventListener('scroll', () => {
+      const btn = document.getElementById('scrollTopBtn');
+      if (window.scrollY > 300) {
+        btn.style.display = 'block';
+      } else {
+        btn.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>

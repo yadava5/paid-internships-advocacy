@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Explore research-backed data showing how unpaid internships impact job offers, salaries, and equity across different demographics." />
+  <meta name="author" content="Ayush Yadav" />
+  
+  <meta property="og:title" content="Data · Paid Internships Now" />
+  <meta property="og:description" content="Interactive data visualizations showing the real impact of unpaid internships on students." />
+  <meta property="og:type" content="website" />
+  
+  <title>Data · Paid Internships Now</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='14' font-size='14'>💰</text></svg>" type="image/svg+xml" />
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/custom.css" />
+</head>
+<body class="data-page">
+<a href="#main-content" class="visually-hidden-focusable position-absolute bg-primary text-white p-2">Skip to main content</a>
+
+<!-- ===== Nav ========================================================= -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="index.html"><i class="bi bi-cash-coin me-1"></i>Paid Internships Now</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"><span class="navbar-toggler-icon"></span></button>
+    <div id="mainNav" class="collapse navbar-collapse">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="stories.html">Stories</a></li>
+        <li class="nav-item"><a class="nav-link active" href="data.html">Data</a></li>
+        <li class="nav-item"><a class="nav-link" href="survey.html">Survey</a></li>
+        <li class="nav-item"><a class="nav-link" href="legal.html">Legal</a></li>
+        <li class="nav-item"><a class="nav-link" href="involved.html">Get Involved</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== Section 1: Offer Rate ======================================= -->
+<section class="data-section" id="offer-section" data-chart="offer">
+  <div class="data-section-bg"></div>
+  <div class="data-content">
+    <div class="data-text">
+      <span class="data-number">72%</span>
+      <h2 class="data-title">Job Offer Rate</h2>
+      <p class="data-subtitle">of paid interns receive job offers after graduation, compared to just <strong>44%</strong> for unpaid interns and <strong>36.5%</strong> for those with no internship experience.</p>
+      <p class="data-source"><i class="bi bi-journal-text"></i> NACE, Class of 2022</p>
+    </div>
+    <div class="data-visual">
+      <div class="chart-wrapper">
+        <canvas id="offerRateChart"></canvas>
+      </div>
+    </div>
+  </div>
+  <div class="section-scroll-hint">
+    <span>Scroll to explore</span>
+    <i class="bi bi-chevron-down"></i>
+  </div>
+</section>
+
+<!-- ===== Section 2: Starting Salary ================================== -->
+<section class="data-section" id="salary-section" data-chart="salary">
+  <div class="data-section-bg"></div>
+  <div class="data-content reverse">
+    <div class="data-text">
+      <span class="data-number">$64k</span>
+      <h2 class="data-title">Starting Salary</h2>
+      <p class="data-subtitle">Paid interns earn nearly <strong>$17,000 more</strong> in their first job compared to unpaid interns. That gap compounds over a career.</p>
+      <p class="data-source"><i class="bi bi-journal-text"></i> NACE Salary Survey, 2022</p>
+    </div>
+    <div class="data-visual">
+      <div class="chart-wrapper">
+        <canvas id="salaryChart"></canvas>
+      </div>
+    </div>
+  </div>
+  <div class="section-scroll-hint">
+    <span>Scroll to explore</span>
+    <i class="bi bi-chevron-down"></i>
+  </div>
+</section>
+
+<!-- ===== Section 3: Salary Growth Over Time ========================== -->
+<section class="data-section" id="growth-section" data-chart="growth">
+  <div class="data-section-bg"></div>
+  <div class="data-content">
+    <div class="data-text">
+      <span class="data-number">$44k</span>
+      <h2 class="data-title">The 10-Year Gap</h2>
+      <p class="data-subtitle">difference in salary by Year 10 between paid and unpaid intern alumni. The pay gap doesn't close—it <strong>widens</strong> over time.</p>
+      <p class="data-source"><i class="bi bi-journal-text"></i> Federal Reserve Bank of New York, 2023</p>
+    </div>
+    <div class="data-visual">
+      <div class="chart-wrapper">
+        <canvas id="growthChart"></canvas>
+      </div>
+    </div>
+  </div>
+  <div class="section-scroll-hint">
+    <span>Scroll to explore</span>
+    <i class="bi bi-chevron-down"></i>
+  </div>
+</section>
+
+<!-- ===== Section 4: Industry Breakdown =============================== -->
+<section class="data-section" id="industry-section" data-chart="industry">
+  <div class="data-section-bg"></div>
+  <div class="data-content reverse">
+    <div class="data-text">
+      <span class="data-number unpaid-highlight">82%</span>
+      <h2 class="data-title">Industry Divide</h2>
+      <p class="data-subtitle">of non-profit internships are unpaid, compared to only <strong>15%</strong> in tech. Students passionate about public service face the steepest barriers.</p>
+      <p class="data-source"><i class="bi bi-journal-text"></i> UW-Madison Research, 2023</p>
+    </div>
+    <div class="data-visual">
+      <div class="chart-wrapper">
+        <canvas id="industryChart"></canvas>
+      </div>
+    </div>
+  </div>
+  <div class="section-scroll-hint">
+    <span>Scroll to explore</span>
+    <i class="bi bi-chevron-down"></i>
+  </div>
+</section>
+
+<!-- ===== Section 5: Equity Gap ======================================= -->
+<section class="data-section" id="equity-section" data-chart="equity">
+  <div class="data-section-bg"></div>
+  <div class="data-content">
+    <div class="data-text">
+      <span class="data-number unpaid-highlight">76%</span>
+      <h2 class="data-title">Who Gets Paid?</h2>
+      <p class="data-subtitle">of low-income students end up in unpaid internships, compared to <strong>42%</strong> of their wealthier peers. Unpaid labor perpetuates inequality.</p>
+      <p class="data-source"><i class="bi bi-journal-text"></i> Harvard Education Research, 2021</p>
+    </div>
+    <div class="data-visual">
+      <div class="chart-wrapper">
+        <canvas id="equityChart"></canvas>
+      </div>
+    </div>
+  </div>
+  <div class="section-scroll-hint">
+    <span>Scroll to explore</span>
+    <i class="bi bi-chevron-down"></i>
+  </div>
+</section>
+
+<!-- ===== Section 6: Time Trend ======================================= -->
+<section class="data-section" id="trend-section" data-chart="trend">
+  <div class="data-section-bg"></div>
+  <div class="data-content reverse">
+    <div class="data-text">
+      <span class="data-number">66%</span>
+      <h2 class="data-title">Progress Being Made</h2>
+      <p class="data-subtitle">of internships are now paid in 2025, up from just <strong>48%</strong> in 2015. Advocacy works—but we're not done yet.</p>
+      <p class="data-source"><i class="bi bi-journal-text"></i> NACE Historical Data, 2015-2025</p>
+    </div>
+    <div class="data-visual">
+      <div class="chart-wrapper">
+        <canvas id="trendChart"></canvas>
+      </div>
+    </div>
+  </div>
+  <div class="section-scroll-hint">
+    <span>Scroll to explore</span>
+    <i class="bi bi-chevron-down"></i>
+  </div>
+</section>
+
+<!-- ===== Section 7: Hours Worked ===================================== -->
+<section class="data-section" id="hours-section" data-chart="hours">
+  <div class="data-section-bg"></div>
+  <div class="data-content">
+    <div class="data-text">
+      <span class="data-number unpaid-highlight">42%</span>
+      <h2 class="data-title">Work vs. Pay</h2>
+      <p class="data-subtitle">of unpaid interns work 40+ hours per week—more than their paid counterparts. Full-time work deserves full-time pay.</p>
+      <p class="data-source"><i class="bi bi-journal-text"></i> Economic Policy Institute, 2022</p>
+    </div>
+    <div class="data-visual">
+      <div class="chart-wrapper">
+        <canvas id="hoursChart"></canvas>
+      </div>
+    </div>
+  </div>
+  <div class="section-scroll-hint">
+    <span>Scroll to explore</span>
+    <i class="bi bi-chevron-down"></i>
+  </div>
+</section>
+
+<!-- ===== Section 8: Mental Health Impact ============================= -->
+<section class="data-section" id="mental-section" data-chart="mental">
+  <div class="data-section-bg"></div>
+  <div class="data-content reverse">
+    <div class="data-text">
+      <span class="data-number unpaid-highlight">72%</span>
+      <h2 class="data-title">The Human Cost</h2>
+      <p class="data-subtitle">of unpaid interns report significant financial anxiety, compared to <strong>22%</strong> of paid interns. Mental health matters.</p>
+      <p class="data-source"><i class="bi bi-journal-text"></i> American Psychological Association, 2023</p>
+    </div>
+    <div class="data-visual">
+      <div class="chart-wrapper">
+        <canvas id="mentalChart"></canvas>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA Section ================================================= -->
+<section class="data-cta-section">
+  <h2 class="display-5 fw-bold mb-3">The Data is Clear.</h2>
+  <p class="lead mb-4">Help us turn these numbers into action.</p>
+  <div class="d-flex gap-3 flex-wrap justify-content-center">
+    <a href="survey.html" class="btn btn-warning btn-lg">Share Your Story</a>
+    <a href="involved.html" class="btn btn-outline-light btn-lg">Get Involved</a>
+  </div>
+</section>
+
+<!-- ===== Footer ====================================================== -->
+<footer class="bg-dark text-white text-center py-4" style="position: relative; z-index: 50;">
+  <div class="container">
+    <div class="mb-2">
+      <span class="badge bg-info text-dark me-2">🎓 ENG109 Final Project</span>
+      <span class="badge bg-secondary">Miami University, Oxford, Ohio</span>
+    </div>
+    <small>© 2025 Paid Internships Now · Data Visualization · Created by Ayush Yadav</small>
+  </div>
+</footer>
+
+<!-- ===== Scripts ===================================================== -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+<script src="js/nav.js" defer></script>
+<script src="js/effects.js" defer></script>
+<script src="js/dataCharts.js" defer></script>
+</body>
+</html>

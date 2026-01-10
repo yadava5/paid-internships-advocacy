@@ -1,0 +1,64 @@
+{
+  "offer_rate": {
+    "labels": ["Paid Internships", "Unpaid Internships", "No Internship"],
+    "data": [72.2, 44.0, 36.5],
+    "title": "Job Offer Rate (%) After Graduation",
+    "source": "National Association of Colleges and Employers (NACE), Class of 2022"
+  },
+  "salary_comparison": {
+    "labels": ["Paid Interns", "Unpaid Interns", "No Internship"],
+    "data": [64274, 47470, 42394],
+    "title": "Median Starting Salary ($)",
+    "source": "NACE Salary Survey 2022"
+  },
+  "salary_growth": {
+    "labels": ["Year 1", "Year 3", "Year 5", "Year 10"],
+    "paid": [64274, 78500, 95200, 142000],
+    "unpaid": [47470, 55800, 68400, 98000],
+    "none": [42394, 48200, 58900, 84000],
+    "title": "Salary Trajectory Over Time",
+    "source": "Federal Reserve Bank of New York, Labor Market Outcomes (2023)"
+  },
+  "industry_distribution": {
+    "labels": ["Tech", "Finance", "Healthcare", "Government", "Non-Profit", "Media/Arts", "Legal"],
+    "paid": [85, 78, 62, 32, 18, 28, 45],
+    "unpaid": [15, 22, 38, 68, 82, 72, 55],
+    "title": "Internship Types by Industry (%)",
+    "source": "Center for Research on College-Work Transitions, University of Wisconsin (2023)"
+  },
+  "access_equity": {
+    "labels": ["White", "Black", "Hispanic", "Asian", "First-Gen", "Low-Income"],
+    "paid": [58, 32, 38, 52, 28, 24],
+    "unpaid": [42, 68, 62, 48, 72, 76],
+    "title": "Access to Paid vs Unpaid Internships by Group (%)",
+    "source": "Harvard Center for Education Policy Research (2021)"
+  },
+  "geographic_disparity": {
+    "labels": ["NYC", "SF Bay", "DC Metro", "LA", "Chicago", "Rural Areas"],
+    "avgSalary": [72000, 78000, 68000, 62000, 58000, 42000],
+    "unpaidRate": [35, 28, 52, 42, 38, 18],
+    "title": "Geographic Disparities in Internship Pay",
+    "source": "Brookings Institution Metropolitan Policy Program (2022)"
+  },
+  "time_trend": {
+    "labels": ["2015", "2017", "2019", "2021", "2023", "2025"],
+    "paidRate": [48, 52, 55, 58, 62, 66],
+    "unpaidRate": [52, 48, 45, 42, 38, 34],
+    "title": "Shift Toward Paid Internships Over Time (%)",
+    "source": "NACE Internship & Co-op Survey, Historical Data (2015-2025)"
+  },
+  "hours_worked": {
+    "labels": ["<20 hrs/wk", "20-30 hrs/wk", "30-40 hrs/wk", "40+ hrs/wk"],
+    "paid": [12, 28, 42, 18],
+    "unpaid": [8, 15, 35, 42],
+    "title": "Weekly Hours Worked by Internship Type (%)",
+    "source": "Economic Policy Institute, Intern Labor Report (2022)"
+  },
+  "mental_health": {
+    "labels": ["High Stress", "Financial Anxiety", "Burnout", "Career Uncertainty"],
+    "paid": [28, 22, 18, 25],
+    "unpaid": [58, 72, 48, 62],
+    "title": "Mental Health Impact by Internship Type (%)",
+    "source": "American Psychological Association, College Student Survey (2023)"
+  }
+}

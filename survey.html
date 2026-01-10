@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Share your internship experience through our comprehensive survey. Your insights help advocate for fair compensation and better opportunities." />
+  <meta name="author" content="Ayush Yadav" />
+  
+  <meta property="og:title" content="Survey · Paid Internships Now" />
+  <meta property="og:description" content="Your internship experience matters. Help us understand the real impact of unpaid labor." />
+  <meta property="og:type" content="website" />
+  
+  <title>Survey · Paid Internships Now</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='14' font-size='14'>💰</text></svg>" type="image/svg+xml" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/custom.css" />
+</head>
+<body class="survey-page">
+<a href="#main-content" class="visually-hidden-focusable position-absolute bg-primary text-white p-2">Skip to main content</a>
+
+<!-- ===== Nav ========================================================= -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="index.html"><i class="bi bi-cash-coin me-1"></i>Paid Internships Now</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"><span class="navbar-toggler-icon"></span></button>
+    <div id="mainNav" class="collapse navbar-collapse">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="stories.html">Stories</a></li>
+        <li class="nav-item"><a class="nav-link" href="data.html">Data</a></li>
+        <li class="nav-item"><a class="nav-link active" href="survey.html">Survey</a></li>
+        <li class="nav-item"><a class="nav-link" href="legal.html">Legal</a></li>
+        <li class="nav-item"><a class="nav-link" href="involved.html">Get Involved</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== Hero Section ================================================ -->
+<section class="survey-hero" id="main-content">
+  <div class="survey-hero-bg"></div>
+  <div class="survey-hero-content">
+    <span class="survey-label"><i class="bi bi-clipboard-data"></i> Research Survey</span>
+    <h1>Your Experience<br><span class="gradient-text">Matters.</span></h1>
+    <p class="lead">Help us understand the real impact of internship compensation on students' lives, careers, and wellbeing.</p>
+    <div class="survey-stats">
+      <div class="stat-item">
+        <span class="stat-number">500+</span>
+        <span class="stat-label">Responses</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">5 min</span>
+        <span class="stat-label">To Complete</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">100%</span>
+        <span class="stat-label">Anonymous</span>
+      </div>
+    </div>
+    <a href="#survey-form" class="btn btn-warning btn-lg mt-4">
+      <i class="bi bi-arrow-down-circle me-2"></i>Start Survey
+    </a>
+  </div>
+  <div class="section-scroll-hint">
+    <span>Scroll to begin</span>
+    <i class="bi bi-chevron-down"></i>
+  </div>
+</section>
+
+<!-- ===== Survey Form ================================================= -->
+<section class="survey-form-section" id="survey-form">
+  <div class="survey-container">
+    
+    <!-- Progress Bar -->
+    <div class="survey-progress">
+      <div class="progress-bar" id="progressBar"></div>
+      <div class="progress-steps">
+        <span class="step active" data-step="1">1</span>
+        <span class="step" data-step="2">2</span>
+        <span class="step" data-step="3">3</span>
+        <span class="step" data-step="4">4</span>
+        <span class="step" data-step="5">5</span>
+      </div>
+    </div>
+
+    <form id="surveyForm">
+      
+      <!-- Step 1: About You -->
+      <div class="survey-step active" data-step="1">
+        <div class="step-header">
+          <span class="step-number">01</span>
+          <h2 class="step-title">About You</h2>
+          <p class="step-desc">Let's start with some background information.</p>
+        </div>
+        
+        <div class="question-group">
+          <label class="question-label">What is your current status?</label>
+          <div class="option-cards">
+            <label class="option-card">
+              <input type="radio" name="status" value="student" required>
+              <div class="card-content">
+                <i class="bi bi-mortarboard"></i>
+                <span>Current Student</span>
+              </div>
+            </label>
+            <label class="option-card">
+              <input type="radio" name="status" value="recent_grad">
+              <div class="card-content">
+                <i class="bi bi-award"></i>
+                <span>Recent Graduate</span>
+              </div>
+            </label>
+            <label class="option-card">
+              <input type="radio" name="status" value="professional">
+              <div class="card-content">
+                <i class="bi bi-briefcase"></i>
+                <span>Working Professional</span>
+              </div>
+            </label>
+            <label class="option-card">
+              <input type="radio" name="status" value="educator">
+              <div class="card-content">
+                <i class="bi bi-book"></i>
+                <span>Educator/Faculty</span>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <div class="question-group">
+          <label class="question-label">What is your field of study/work?</label>
+          <select class="survey-select" name="field" required>
+            <option value="" disabled selected>Select your field...</option>
+            <option value="business">Business / Finance</option>
+            <option value="tech">Technology / Engineering</option>
+            <option value="healthcare">Healthcare / Medicine</option>
+            <option value="arts">Arts / Media / Communications</option>
+            <option value="nonprofit">Non-Profit / Social Services</option>
+            <option value="government">Government / Policy</option>
+            <option value="education">Education</option>
+            <option value="legal">Legal</option>
+            <option value="science">Science / Research</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div class="question-group">
+          <label class="question-label">Are you a first-generation college student?</label>
+          <div class="toggle-options">
+            <label class="toggle-option">
+              <input type="radio" name="firstgen" value="yes">
+              <span>Yes</span>
+            </label>
+            <label class="toggle-option">
+              <input type="radio" name="firstgen" value="no">
+              <span>No</span>
+            </label>
+            <label class="toggle-option">
+              <input type="radio" name="firstgen" value="prefer_not">
+              <span>Prefer not to say</span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 2: Internship Experience -->
+      <div class="survey-step" data-step="2">
+        <div class="step-header">
+          <span class="step-number">02</span>
+          <h2 class="step-title">Internship Experience</h2>
+          <p class="step-desc">Tell us about your internship history.</p>
+        </div>
+        
+        <div class="question-group">
+          <label class="question-label">How many internships have you completed?</label>
+          <div class="option-cards horizontal">
+            <label class="option-card small">
+              <input type="radio" name="internship_count" value="0">
+              <div class="card-content"><span>0</span></div>
+            </label>
+            <label class="option-card small">
+              <input type="radio" name="internship_count" value="1">
+              <div class="card-content"><span>1</span></div>
+            </label>
+            <label class="option-card small">
+              <input type="radio" name="internship_count" value="2">
+              <div class="card-content"><span>2</span></div>
+            </label>
+            <label class="option-card small">
+              <input type="radio" name="internship_count" value="3">
+              <div class="card-content"><span>3</span></div>
+            </label>
+            <label class="option-card small">
+              <input type="radio" name="internship_count" value="4+">
+              <div class="card-content"><span>4+</span></div>
+            </label>
+          </div>
+        </div>
+
+        <div class="question-group">
+          <label class="question-label">What type of compensation did you receive?</label>
+          <div class="checkbox-list">
+            <label class="checkbox-item">
+              <input type="checkbox" name="compensation" value="paid_hourly">
+              <span class="checkmark"></span>
+              <span class="checkbox-label">Paid (Hourly wage)</span>
+            </label>
+            <label class="checkbox-item">
+              <input type="checkbox" name="compensation" value="paid_salary">
+              <span class="checkmark"></span>
+              <span class="checkbox-label">Paid (Salary/Stipend)</span>
+            </label>
+            <label class="checkbox-item">
+              <input type="checkbox" name="compensation" value="unpaid">
+              <span class="checkmark"></span>
+              <span class="checkbox-label">Unpaid</span>
+            </label>
+            <label class="checkbox-item">
+              <input type="checkbox" name="compensation" value="credit_only">
+              <span class="checkmark"></span>
+              <span class="checkbox-label">Academic Credit Only</span>
+            </label>
+            <label class="checkbox-item">
+              <input type="checkbox" name="compensation" value="na">
+              <span class="checkmark"></span>
+              <span class="checkbox-label">N/A - Never had an internship</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="question-group">
+          <label class="question-label">How many hours per week did you typically work?</label>
+          <div class="slider-container">
+            <input type="range" class="survey-slider" name="hours" min="0" max="60" value="20" id="hoursSlider">
+            <div class="slider-value"><span id="hoursValue">20</span> hrs/week</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 3: Financial Impact -->
+      <div class="survey-step" data-step="3">
+        <div class="step-header">
+          <span class="step-number">03</span>
+          <h2 class="step-title">Financial Impact</h2>
+          <p class="step-desc">How did your internship affect your finances?</p>
+        </div>
+        
+        <div class="question-group">
+          <label class="question-label">Did you have to take on additional work to support yourself during your internship?</label>
+          <div class="toggle-options">
+            <label class="toggle-option">
+              <input type="radio" name="additional_work" value="yes">
+              <span>Yes</span>
+            </label>
+            <label class="toggle-option">
+              <input type="radio" name="additional_work" value="no">
+              <span>No</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="question-group">
+          <label class="question-label">Did financial constraints limit which internships you could apply to?</label>
+          <div class="option-cards">
+            <label class="option-card">
+              <input type="radio" name="financial_limit" value="significantly">
+              <div class="card-content">
+                <i class="bi bi-x-circle text-danger"></i>
+                <span>Significantly</span>
+              </div>
+            </label>
+            <label class="option-card">
+              <input type="radio" name="financial_limit" value="somewhat">
+              <div class="card-content">
+                <i class="bi bi-dash-circle text-warning"></i>
+                <span>Somewhat</span>
+              </div>
+            </label>
+            <label class="option-card">
+              <input type="radio" name="financial_limit" value="not_really">
+              <div class="card-content">
+                <i class="bi bi-check-circle text-success"></i>
+                <span>Not Really</span>
+              </div>
+            </label>
+            <label class="option-card">
+              <input type="radio" name="financial_limit" value="not_at_all">
+              <div class="card-content">
+                <i class="bi bi-check-circle-fill text-success"></i>
+                <span>Not at All</span>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <div class="question-group">
+          <label class="question-label">How would you rate your level of financial stress during your internship?</label>
+          <div class="emoji-scale">
+            <label class="emoji-option">
+              <input type="radio" name="financial_stress" value="1">
+              <span class="emoji">😊</span>
+              <span class="emoji-label">None</span>
+            </label>
+            <label class="emoji-option">
+              <input type="radio" name="financial_stress" value="2">
+              <span class="emoji">🙂</span>
+              <span class="emoji-label">Low</span>
+            </label>
+            <label class="emoji-option">
+              <input type="radio" name="financial_stress" value="3">
+              <span class="emoji">😐</span>
+              <span class="emoji-label">Moderate</span>
+            </label>
+            <label class="emoji-option">
+              <input type="radio" name="financial_stress" value="4">
+              <span class="emoji">😟</span>
+              <span class="emoji-label">High</span>
+            </label>
+            <label class="emoji-option">
+              <input type="radio" name="financial_stress" value="5">
+              <span class="emoji">😰</span>
+              <span class="emoji-label">Severe</span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 4: Career Impact -->
+      <div class="survey-step" data-step="4">
+        <div class="step-header">
+          <span class="step-number">04</span>
+          <h2 class="step-title">Career Impact</h2>
+          <p class="step-desc">How did your internship experience shape your career?</p>
+        </div>
+        
+        <div class="question-group">
+          <label class="question-label">Did your internship lead to a job offer?</label>
+          <div class="toggle-options">
+            <label class="toggle-option">
+              <input type="radio" name="job_offer" value="yes">
+              <span>Yes</span>
+            </label>
+            <label class="toggle-option">
+              <input type="radio" name="job_offer" value="no">
+              <span>No</span>
+            </label>
+            <label class="toggle-option">
+              <input type="radio" name="job_offer" value="na">
+              <span>N/A</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="question-group">
+          <label class="question-label">How valuable was your internship experience for your career?</label>
+          <div class="rating-scale">
+            <span class="scale-label">Not Valuable</span>
+            <div class="scale-options">
+              <label class="scale-option">
+                <input type="radio" name="career_value" value="1">
+                <span>1</span>
+              </label>
+              <label class="scale-option">
+                <input type="radio" name="career_value" value="2">
+                <span>2</span>
+              </label>
+              <label class="scale-option">
+                <input type="radio" name="career_value" value="3">
+                <span>3</span>
+              </label>
+              <label class="scale-option">
+                <input type="radio" name="career_value" value="4">
+                <span>4</span>
+              </label>
+              <label class="scale-option">
+                <input type="radio" name="career_value" value="5">
+                <span>5</span>
+              </label>
+            </div>
+            <span class="scale-label">Extremely Valuable</span>
+          </div>
+        </div>
+
+        <div class="question-group">
+          <label class="question-label">Do you believe unpaid internships should be illegal?</label>
+          <div class="option-cards">
+            <label class="option-card">
+              <input type="radio" name="opinion_legality" value="strongly_agree">
+              <div class="card-content">
+                <span>Strongly Agree</span>
+              </div>
+            </label>
+            <label class="option-card">
+              <input type="radio" name="opinion_legality" value="agree">
+              <div class="card-content">
+                <span>Agree</span>
+              </div>
+            </label>
+            <label class="option-card">
+              <input type="radio" name="opinion_legality" value="neutral">
+              <div class="card-content">
+                <span>Neutral</span>
+              </div>
+            </label>
+            <label class="option-card">
+              <input type="radio" name="opinion_legality" value="disagree">
+              <div class="card-content">
+                <span>Disagree</span>
+              </div>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 5: Your Story -->
+      <div class="survey-step" data-step="5">
+        <div class="step-header">
+          <span class="step-number">05</span>
+          <h2 class="step-title">Your Story</h2>
+          <p class="step-desc">Share your thoughts in your own words.</p>
+        </div>
+        
+        <div class="question-group">
+          <label class="question-label">In your own words, how did your internship experience (paid or unpaid) impact your life?</label>
+          <textarea class="survey-textarea" name="personal_story" rows="5" placeholder="Share your experience here... Your story could help change policy."></textarea>
+        </div>
+
+        <div class="question-group">
+          <label class="question-label">What advice would you give to students navigating internship opportunities?</label>
+          <textarea class="survey-textarea" name="advice" rows="4" placeholder="Your wisdom for future interns..."></textarea>
+        </div>
+
+        <div class="question-group">
+          <label class="question-label">Would you like to be contacted to share your story publicly? (Optional)</label>
+          <div class="contact-option">
+            <label class="checkbox-item">
+              <input type="checkbox" name="share_publicly" value="yes">
+              <span class="checkmark"></span>
+              <span class="checkbox-label">Yes, I'd like to share my story</span>
+            </label>
+            <input type="email" class="survey-input" name="email" placeholder="your.email@example.com">
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation Buttons -->
+      <div class="survey-nav">
+        <button type="button" class="btn-survey-nav btn-prev" id="prevBtn" disabled>
+          <i class="bi bi-arrow-left"></i> Previous
+        </button>
+        <button type="button" class="btn-survey-nav btn-next" id="nextBtn">
+          Next <i class="bi bi-arrow-right"></i>
+        </button>
+        <button type="submit" class="btn-survey-submit" id="submitBtn" style="display: none;">
+          <i class="bi bi-check-circle me-2"></i>Submit Survey
+        </button>
+      </div>
+
+    </form>
+
+    <!-- Thank You State -->
+    <div class="survey-complete" id="thankYouMessage" style="display: none;">
+      <div class="complete-icon">
+        <i class="bi bi-check-circle-fill"></i>
+      </div>
+      <h2>Thank You!</h2>
+      <p>Your response has been recorded. Your insights will help us advocate for fair internship practices.</p>
+      <div class="complete-actions">
+        <a href="stories.html" class="btn btn-outline-light btn-lg">Read Stories</a>
+        <a href="data.html" class="btn btn-warning btn-lg">Explore Data</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== Footer ====================================================== -->
+<footer class="bg-dark text-white text-center py-4" style="position: relative; z-index: 50;">
+  <div class="container">
+    <div class="mb-2">
+      <span class="badge bg-info text-dark me-2">🎓 ENG109 Final Project</span>
+      <span class="badge bg-secondary">Miami University, Oxford, Ohio</span>
+    </div>
+    <small>© 2025 Paid Internships Now · Survey · Created by Ayush Yadav</small>
+  </div>
+</footer>
+
+<!-- ===== Scripts ===================================================== -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+<script src="js/nav.js" defer></script>
+<script src="js/effects.js" defer></script>
+<script src="js/survey.js" defer></script>
+</body>
+</html>
