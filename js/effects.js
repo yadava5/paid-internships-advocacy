@@ -422,4 +422,218 @@
     sectionObserver.observe(section);
   });
 
+  // ---------- 14. Text Gradient Animation ---------------
+  function initTextGradientAnimation() {
+    const gradientTexts = document.querySelectorAll('.gradient-text-animated');
+    gradientTexts.forEach(text => {
+      text.style.backgroundSize = '200% 200%';
+      text.style.animation = 'gradientShift 3s ease infinite';
+    });
+  }
+
+  // Add gradient shift keyframes
+  const gradientStyle = document.createElement('style');
+  gradientStyle.textContent = `
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    
+    .gradient-text-animated {
+      background: linear-gradient(90deg, #00c853, #6ea8fe, #ff5252, #ffc107, #00c853);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+  `;
+  document.head.appendChild(gradientStyle);
+
+  // ---------- 15. Floating Animation for Elements -------
+  function initFloatingElements() {
+    const floaters = document.querySelectorAll('.float');
+    floaters.forEach((el, index) => {
+      el.style.animation = `floatUpDown ${3 + index * 0.5}s ease-in-out infinite`;
+      el.style.animationDelay = `${index * 0.2}s`;
+    });
+  }
+
+  const floatStyle = document.createElement('style');
+  floatStyle.textContent = `
+    @keyframes floatUpDown {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+  `;
+  document.head.appendChild(floatStyle);
+
+  // ---------- 16. Typewriter Effect ---------------------
+  function initTypewriter() {
+    const typewriters = document.querySelectorAll('.typewriter');
+    
+    typewriters.forEach(el => {
+      const text = el.textContent;
+      el.textContent = '';
+      el.style.opacity = '1';
+      
+      let i = 0;
+      const speed = 50;
+      
+      function type() {
+        if (i < text.length) {
+          el.textContent += text.charAt(i);
+          i++;
+          setTimeout(type, speed);
+        }
+      }
+      
+      // Start when visible
+      const observer = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+          type();
+          observer.disconnect();
+        }
+      });
+      observer.observe(el);
+    });
+  }
+
+  // ---------- 17. Staggered List Animation --------------
+  function initStaggeredLists() {
+    const lists = document.querySelectorAll('.stagger-list');
+    
+    lists.forEach(list => {
+      const items = list.children;
+      
+      const observer = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+          Array.from(items).forEach((item, index) => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateX(-20px)';
+            item.style.transition = 'all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+            
+            setTimeout(() => {
+              item.style.opacity = '1';
+              item.style.transform = 'translateX(0)';
+            }, index * 100);
+          });
+          observer.disconnect();
+        }
+      }, { threshold: 0.2 });
+      
+      observer.observe(list);
+    });
+  }
+
+  // ---------- 18. Parallax Mouse Movement ---------------
+  function initMouseParallax() {
+    const parallaxContainers = document.querySelectorAll('.mouse-parallax');
+    
+    parallaxContainers.forEach(container => {
+      const layers = container.querySelectorAll('.parallax-layer');
+      
+      container.addEventListener('mousemove', (e) => {
+        const rect = container.getBoundingClientRect();
+        const x = (e.clientX - rect.left - rect.width / 2) / rect.width;
+        const y = (e.clientY - rect.top - rect.height / 2) / rect.height;
+        
+        layers.forEach((layer, index) => {
+          const speed = (index + 1) * 20;
+          layer.style.transform = `translate(${x * speed}px, ${y * speed}px)`;
+        });
+      });
+      
+      container.addEventListener('mouseleave', () => {
+        layers.forEach(layer => {
+          layer.style.transform = 'translate(0, 0)';
+          layer.style.transition = 'transform 0.5s ease-out';
+        });
+      });
+    });
+  }
+
+  // ---------- 19. Glow Effect on Hover ------------------
+  function initGlowHover() {
+    const glowElements = document.querySelectorAll('.glow-hover');
+    
+    glowElements.forEach(el => {
+      el.addEventListener('mousemove', (e) => {
+        const rect = el.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        el.style.setProperty('--glow-x', `${x}px`);
+        el.style.setProperty('--glow-y', `${y}px`);
+      });
+    });
+  }
+
+  const glowStyle = document.createElement('style');
+  glowStyle.textContent = `
+    .glow-hover {
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .glow-hover::before {
+      content: '';
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, rgba(0, 200, 83, 0.3) 0%, transparent 70%);
+      left: var(--glow-x, 50%);
+      top: var(--glow-y, 50%);
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+      z-index: 0;
+    }
+    
+    .glow-hover:hover::before {
+      opacity: 1;
+    }
+  `;
+  document.head.appendChild(glowStyle);
+
+  // ---------- 20. Number Spin Animation -----------------
+  function initNumberSpin() {
+    const spinNumbers = document.querySelectorAll('.spin-number');
+    
+    spinNumbers.forEach(el => {
+      const finalValue = parseInt(el.textContent);
+      
+      const observer = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+          let current = 0;
+          const increment = finalValue / 60;
+          const duration = 2000;
+          const stepTime = duration / 60;
+          
+          const spin = setInterval(() => {
+            current += increment;
+            if (current >= finalValue) {
+              el.textContent = finalValue.toLocaleString();
+              clearInterval(spin);
+            } else {
+              el.textContent = Math.floor(current).toLocaleString();
+            }
+          }, stepTime);
+          
+          observer.disconnect();
+        }
+      }, { threshold: 0.5 });
+      
+      observer.observe(el);
+    });
+  }
+
+  // Initialize new effects
+  initTextGradientAnimation();
+  initFloatingElements();
+  initStaggeredLists();
+  initMouseParallax();
+  initGlowHover();
+  initNumberSpin();
+
 })();
