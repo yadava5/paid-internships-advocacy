@@ -1,6 +1,6 @@
 /**
  * legal.js - Apple-style scroll effects for the Legal page
- * Handles parallax backgrounds, section reveals, and smooth scroll animations
+ * Handles parallax backgrounds, 3D section transitions, and smooth scroll animations
  */
 
 (function() {
@@ -10,11 +10,104 @@
   document.addEventListener('DOMContentLoaded', initLegalPage);
 
   function initLegalPage() {
-    initSmoothScrollReveal();
+    init3DSectionEffects();
     initHeroParallax();
     initFactorCards();
     initScrollIndicator();
-    initSectionBackgrounds();
+  }
+
+  /**
+   * Apple-Style 3D Scroll Effects - Sections minimize and fade as you scroll
+   */
+  function init3DSectionEffects() {
+    const sections = document.querySelectorAll('.legal-section');
+    if (!sections.length) return;
+
+    let ticking = false;
+
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          updateLegalScrollEffects(sections);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
+
+    // Initial call
+    updateLegalScrollEffects(sections);
+  }
+
+  /**
+   * Update 3D transforms for each section based on scroll position
+   */
+  function updateLegalScrollEffects(sections) {
+    const viewportHeight = window.innerHeight;
+
+    sections.forEach((section) => {
+      const rect = section.getBoundingClientRect();
+      const sectionCenter = rect.top + rect.height / 2;
+      const viewportCenter = viewportHeight / 2;
+      const distanceFromCenter = (sectionCenter - viewportCenter) / viewportHeight;
+
+      // Get elements
+      const bg = section.querySelector('.legal-section-bg');
+      const content = section.querySelector('.legal-content');
+      const icon = section.querySelector('.section-icon');
+
+      // Background parallax with scale
+      if (bg) {
+        const bgOffset = distanceFromCenter * 50;
+        const bgScale = 1.1 - Math.abs(distanceFromCenter) * 0.05;
+        bg.style.transform = `translateY(${bgOffset}px) scale(${bgScale})`;
+        bg.style.opacity = 1 - Math.abs(distanceFromCenter) * 0.3;
+      }
+
+      // Content 3D transform - scale down, rotate, and fade as you scroll away
+      if (content) {
+        const scale = 1 - Math.abs(distanceFromCenter) * 0.15;
+        const translateZ = -Math.abs(distanceFromCenter) * 100;
+        const rotateX = distanceFromCenter * 8;
+        const opacity = 1 - Math.abs(distanceFromCenter) * 0.6;
+        const translateY = distanceFromCenter * -20;
+
+        content.style.transform = `
+          perspective(1200px)
+          translateZ(${translateZ}px)
+          translateY(${translateY}px)
+          rotateX(${rotateX}deg)
+          scale(${Math.max(0.85, scale)})
+        `;
+        content.style.opacity = Math.max(0.3, opacity);
+      }
+
+      // Icon parallax (moves slower)
+      if (icon) {
+        const iconOffset = distanceFromCenter * -15;
+        icon.style.transform = `translateY(${iconOffset}px)`;
+      }
+
+      // Mark section as in-view
+      if (Math.abs(distanceFromCenter) < 0.4) {
+        section.classList.add('in-view');
+        
+        // Trigger child animations when in view
+        if (content && !content.classList.contains('animated')) {
+          content.classList.add('animated');
+          const children = content.children;
+          Array.from(children).forEach((child, index) => {
+            const delay = index * 0.08;
+            child.style.transitionDelay = `${delay}s`;
+            requestAnimationFrame(() => {
+              child.classList.add('animate-in');
+            });
+          });
+        }
+      } else {
+        section.classList.remove('in-view');
+      }
+    });
   }
 
   /**
@@ -167,41 +260,6 @@
       }
       
       lastScrollY = scrollY;
-    }, { passive: true });
-  }
-
-  /**
-   * Subtle background movement on scroll for sections
-   */
-  function initSectionBackgrounds() {
-    const sections = document.querySelectorAll('.legal-section');
-    
-    let ticking = false;
-    
-    window.addEventListener('scroll', () => {
-      if (!ticking) {
-        requestAnimationFrame(() => {
-          sections.forEach(section => {
-            const rect = section.getBoundingClientRect();
-            const windowHeight = window.innerHeight;
-            
-            // Check if section is in view
-            if (rect.top < windowHeight && rect.bottom > 0) {
-              const bg = section.querySelector('.legal-section-bg');
-              if (bg) {
-                // Calculate how far through the section we've scrolled
-                const progress = (windowHeight - rect.top) / (windowHeight + rect.height);
-                const offset = (progress - 0.5) * 30;
-                
-                bg.style.transform = `translate3d(0, ${offset}px, 0)`;
-              }
-            }
-          });
-          
-          ticking = false;
-        });
-        ticking = true;
-      }
     }, { passive: true });
   }
 
