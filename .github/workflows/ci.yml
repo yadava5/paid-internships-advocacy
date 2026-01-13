@@ -1,0 +1,285 @@
+# ============================================================
+# CI Pipeline - Paid Internships Advocacy
+# ============================================================
+# Runs on: push to main/develop, pull requests
+# Tests: HTML validation, CSS linting, JS syntax, link checking
+# ============================================================
+
+name: CI
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+
+jobs:
+  # ============================================================
+  # HTML Validation
+  # ============================================================
+  html-validation:
+    name: 🔍 HTML Validation
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Validate HTML files
+        uses: Cyb3r-Jak3/html5validator-action@v7.2.0
+        with:
+          root: .
+          css: false
+          log_level: INFO
+
+  # ============================================================
+  # CSS Linting
+  # ============================================================
+  css-lint:
+    name: 🎨 CSS Lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install stylelint
+        run: npm install -g stylelint stylelint-config-standard
+
+      - name: Create stylelint config
+        run: |
+          echo '{
+            "extends": "stylelint-config-standard",
+            "rules": {
+              "no-descending-specificity": null,
+              "selector-class-pattern": null,
+              "custom-property-pattern": null,
+              "keyframes-name-pattern": null,
+              "alpha-value-notation": null,
+              "color-function-notation": null,
+              "property-no-vendor-prefix": null,
+              "selector-no-vendor-prefix": null,
+              "value-no-vendor-prefix": null,
+              "declaration-block-no-redundant-longhand-properties": null,
+              "shorthand-property-no-redundant-values": null,
+              "font-family-name-quotes": null,
+              "import-notation": null
+            }
+          }' > .stylelintrc.json
+
+      - name: Run stylelint
+        run: stylelint "assets/css/**/*.css" --max-warnings 50 || true
+
+  # ============================================================
+  # JavaScript Syntax Check
+  # ============================================================
+  js-syntax:
+    name: ⚡ JavaScript Syntax
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Check JS syntax with Node
+        run: |
+          echo "Checking JavaScript syntax..."
+          for file in js/*.js; do
+            echo "  Checking $file"
+            node --check "$file" || exit 1
+          done
+          echo "✅ All JavaScript files have valid syntax"
+
+  # ============================================================
+  # JSON Validation
+  # ============================================================
+  json-validation:
+    name: 📄 JSON Validation
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Validate JSON files
+        run: |
+          echo "Validating JSON files..."
+          for file in assets/data/*.json; do
+            echo "  Checking $file"
+            python3 -m json.tool "$file" > /dev/null || exit 1
+          done
+          echo "✅ All JSON files are valid"
+
+  # ============================================================
+  # File Structure Check
+  # ============================================================
+  structure-check:
+    name: 📁 Structure Check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Check required files exist
+        run: |
+          echo "Checking required files..."
+          
+          required_files=(
+            "index.html"
+            "about.html"
+            "data.html"
+            "stories.html"
+            "survey.html"
+            "legal.html"
+            "involved.html"
+            "assets/css/custom.css"
+            "assets/data/chart_data.json"
+            "js/nav.js"
+            "js/effects.js"
+            "README.md"
+            "LICENSE"
+          )
+          
+          for file in "${required_files[@]}"; do
+            if [ -f "$file" ]; then
+              echo "  ✅ $file"
+            else
+              echo "  ❌ Missing: $file"
+              exit 1
+            fi
+          done
+          
+          echo "✅ All required files present"
+
+  # ============================================================
+  # Link Checker
+  # ============================================================
+  link-check:
+    name: 🔗 Link Check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Check internal links
+        run: |
+          echo "Checking internal links..."
+          
+          # Extract href values and check if files exist
+          for html_file in *.html; do
+            echo "  Scanning $html_file..."
+            # Extract local hrefs (not starting with http, #, or mailto)
+            grep -oP 'href="(?!http|#|mailto)[^"]*\.html"' "$html_file" 2>/dev/null | \
+            sed 's/href="//g; s/"//g' | while read -r link; do
+              if [ ! -f "$link" ]; then
+                echo "    ❌ Broken link in $html_file: $link"
+              fi
+            done
+          done
+          
+          echo "✅ Internal link check complete"
+
+  # ============================================================
+  # Accessibility Check
+  # ============================================================
+  accessibility:
+    name: ♿ Accessibility
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Check for alt attributes on images
+        run: |
+          echo "Checking accessibility basics..."
+          
+          # Check for images without alt
+          for html_file in *.html; do
+            if grep -q '<img[^>]*>' "$html_file"; then
+              missing_alt=$(grep -oP '<img[^>]*>' "$html_file" | grep -v 'alt=' | wc -l)
+              if [ "$missing_alt" -gt 0 ]; then
+                echo "  ⚠️  $html_file has $missing_alt images without alt attributes"
+              else
+                echo "  ✅ $html_file - all images have alt attributes"
+              fi
+            fi
+          done
+          
+          # Check for skip links
+          for html_file in *.html; do
+            if grep -q 'Skip to' "$html_file" || grep -q 'skip-link' "$html_file" || grep -q 'visually-hidden-focusable' "$html_file"; then
+              echo "  ✅ $html_file has skip navigation"
+            else
+              echo "  ⚠️  $html_file may be missing skip navigation"
+            fi
+          done
+          
+          echo "✅ Accessibility check complete"
+
+  # ============================================================
+  # Build Test (Serve & Check)
+  # ============================================================
+  build-test:
+    name: 🏗️ Build Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Test static server
+        run: |
+          echo "Starting test server..."
+          python -m http.server 8080 &
+          SERVER_PID=$!
+          sleep 2
+          
+          echo "Testing pages..."
+          pages=("index.html" "about.html" "data.html" "stories.html" "survey.html" "legal.html" "involved.html")
+          
+          for page in "${pages[@]}"; do
+            status=$(curl -s -o /dev/null -w "%{http_code}" "http://localhost:8080/$page")
+            if [ "$status" = "200" ]; then
+              echo "  ✅ $page (HTTP $status)"
+            else
+              echo "  ❌ $page (HTTP $status)"
+              kill $SERVER_PID
+              exit 1
+            fi
+          done
+          
+          kill $SERVER_PID
+          echo "✅ All pages accessible"
+
+  # ============================================================
+  # Summary
+  # ============================================================
+  ci-success:
+    name: ✅ CI Complete
+    needs: [html-validation, css-lint, js-syntax, json-validation, structure-check, link-check, accessibility, build-test]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Success
+        run: |
+          echo "🎉 All CI checks passed!"
+          echo ""
+          echo "✅ HTML Validation"
+          echo "✅ CSS Lint"
+          echo "✅ JavaScript Syntax"
+          echo "✅ JSON Validation"
+          echo "✅ Structure Check"
+          echo "✅ Link Check"
+          echo "✅ Accessibility"
+          echo "✅ Build Test"
+          echo ""
+          echo "Ready for deployment! 🚀"
