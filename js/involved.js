@@ -1,5 +1,5 @@
 /**
- * involved.js - Apple-style scroll effects for the Get Involved page
+ * involved.js - 3D scroll effects for the Get Involved page
  * Handles 3D scroll effects, parallax, and interactive elements
  */
 
@@ -18,7 +18,7 @@
   }
 
   /**
-   * Apple-Style 3D Scroll Effects - Sections minimize and fade as you scroll
+   * 3D Scroll Effects - Sections minimize and fade as you scroll
    */
   function init3DSectionEffects() {
     const sections = document.querySelectorAll('.involved-section');

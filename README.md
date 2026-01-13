@@ -23,7 +23,7 @@
 <p align="center">
 <strong>An immersive advocacy website promoting fair compensation for student internships</strong>
 <br />
-<em>Featuring Apple-style design, 3D scroll effects, and research-backed data visualizations</em>
+<em>Featuring immersive design, 3D scroll effects, and research-backed data visualizations</em>
 </p>
 
 <br />
@@ -83,7 +83,7 @@
 <td width="50%">
 
 ### 🎯 User Experience
-- **Apple product launch** aesthetic
+- **Premium immersive** aesthetic
 - **Full-screen immersive** sections
 - **Smooth scroll** transitions
 - **Magnetic buttons** & hover effects

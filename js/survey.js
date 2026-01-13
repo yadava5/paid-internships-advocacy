@@ -1,5 +1,5 @@
 /**
- * Survey Page - Multi-Step Form with Apple-Style UX
+ * Survey Page - Multi-Step Form with Premium UX
  */
 
 (function() {

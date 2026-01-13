@@ -1,5 +1,5 @@
 // ==========================================================
-// effects.js · Apple-Style Immersive Experience
+// effects.js · Immersive Experience Effects
 // ==========================================================
 
 (function() {
@@ -96,7 +96,7 @@
     });
   }
 
-  // ---------- 3. Scroll Reveal (Apple-style) ------------
+  // ---------- 3. Scroll Reveal (Smooth) ------------
   function initScrollReveal() {
     // Create observer for scroll-reveal elements
     const revealObserver = new IntersectionObserver((entries) => {

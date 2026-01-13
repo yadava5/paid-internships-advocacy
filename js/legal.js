@@ -1,5 +1,5 @@
 /**
- * legal.js - Apple-style scroll effects for the Legal page
+ * legal.js - 3D scroll effects for the Legal page
  * Handles parallax backgrounds, 3D section transitions, and smooth scroll animations
  */
 
@@ -17,7 +17,7 @@
   }
 
   /**
-   * Apple-Style 3D Scroll Effects - Sections minimize and fade as you scroll
+   * 3D Scroll Effects - Sections minimize and fade as you scroll
    */
   function init3DSectionEffects() {
     const sections = document.querySelectorAll('.legal-section');

@@ -1,5 +1,5 @@
 /**
- * Data Page - Apple-Style Immersive Charts
+ * Data Page - Immersive Charts
  * Full-screen data sections with 3D scroll effects
  */
 
@@ -53,7 +53,7 @@
   });
 
   /**
-   * Apple-Style 3D Scroll Effects for Data Sections
+   * 3D Scroll Effects for Data Sections
    */
   function initScrollEffects() {
     const sections = document.querySelectorAll('.data-section');

@@ -1,13 +1,13 @@
 /**
- * Stories Page - Apple-Style Immersive Experience
+ * Stories Page - Immersive Experience
  * Full-screen stories with 3D scroll transitions
  */
 
 document.addEventListener('DOMContentLoaded', () => {
   // Initialize story carousels
   initStoryCarousels();
-  // Initialize Apple-style 3D scroll effects
-  initAppleScrollEffects();
+  // Initialize 3D scroll effects
+  initScrollEffects();
 });
 
 /**
@@ -93,10 +93,10 @@ function initStoryCarousels() {
 }
 
 /**
- * Apple-Style 3D Scroll Effects
+ * 3D Scroll Effects
  * Creates depth, parallax, and 3D transformations when scrolling between sections
  */
-function initAppleScrollEffects() {
+function initScrollEffects() {
   const sections = document.querySelectorAll('.story-focus-section');
   if (!sections.length) return;
   
@@ -180,7 +180,7 @@ function updateScrollEffects(sections) {
     const scrollHint = section.querySelector('.section-scroll-hint');
     
     if (showcase) {
-      // Apple-style depth effect - sections closer to center appear larger/closer
+      // Depth effect - sections closer to center appear larger/closer
       const scale = 1 - Math.abs(distanceFromCenter) * 0.15;
       const translateZ = -Math.abs(distanceFromCenter) * 100;
       const rotateX = distanceFromCenter * 8; // Subtle tilt based on scroll
@@ -234,7 +234,7 @@ function updateScrollEffects(sections) {
 }
 
 /**
- * Add smooth section snapping for a more Apple-like feel
+ * Add smooth section snapping for a more polished feel
  */
 function initSectionSnapping() {
   // Optional: Enable CSS scroll-snap for section snapping
