@@ -55,14 +55,15 @@
     document.addEventListener('mousemove', e => {
       mouseX = e.clientX;
       mouseY = e.clientY;
+      // Dot follows immediately (centered via CSS transform)
       dot.style.left = mouseX + 'px';
       dot.style.top = mouseY + 'px';
     });
 
-    // Smooth ring follow
+    // Smooth ring follow - faster lerp (0.35 instead of 0.15)
     function animateRing() {
-      ringX += (mouseX - ringX) * 0.15;
-      ringY += (mouseY - ringY) * 0.15;
+      ringX += (mouseX - ringX) * 0.35;
+      ringY += (mouseY - ringY) * 0.35;
       ring.style.left = ringX + 'px';
       ring.style.top = ringY + 'px';
       requestAnimationFrame(animateRing);
@@ -74,11 +75,13 @@
     interactives.forEach(el => {
       el.addEventListener('mouseenter', () => {
         ring.classList.add('hover');
-        dot.style.transform = 'scale(2)';
+        dot.style.width = '12px';
+        dot.style.height = '12px';
       });
       el.addEventListener('mouseleave', () => {
         ring.classList.remove('hover');
-        dot.style.transform = 'scale(1)';
+        dot.style.width = '8px';
+        dot.style.height = '8px';
       });
     });
 

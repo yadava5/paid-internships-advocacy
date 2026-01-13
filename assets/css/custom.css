@@ -427,7 +427,8 @@ footer .badge {
   pointer-events: none;
   z-index: 9999;
   mix-blend-mode: difference;
-  transition: transform 0.1s ease;
+  transform: translate(-50%, -50%);
+  transition: width 0.15s ease, height 0.15s ease;
 }
 
 .cursor-ring {
@@ -438,11 +439,13 @@ footer .badge {
   border-radius: 50%;
   pointer-events: none;
   z-index: 9998;
-  transition: all 0.15s ease-out;
+  transform: translate(-50%, -50%);
+  transition: width 0.15s ease, height 0.15s ease, border-color 0.15s ease, background 0.15s ease;
 }
 
 .cursor-ring.hover {
-  transform: scale(1.5);
+  width: 60px;
+  height: 60px;
   border-color: var(--brand-gold);
   background: rgba(255, 193, 7, 0.1);
 }
@@ -5462,4 +5465,237 @@ html {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+/* ==========================================================
+   UNIFIED SITE HEADER & FOOTER - APPLE STYLE
+   ========================================================== */
+
+/* ---------- Glassmorphism Navigation -------------------- */
+.glass-nav {
+  background: rgba(0, 0, 0, 0.72) !important;
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 0.75rem 0;
+}
+
+.glass-nav.scrolled {
+  background: rgba(0, 0, 0, 0.92) !important;
+  padding: 0.5rem 0;
+}
+
+.glass-nav .navbar-brand {
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  color: #f5f5f7 !important;
+  transition: all 0.3s ease;
+}
+
+.glass-nav .navbar-brand:hover {
+  opacity: 0.8;
+}
+
+.glass-nav .navbar-brand i {
+  color: #00c853;
+}
+
+.glass-nav .nav-link {
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.8) !important;
+  padding: 0.5rem 1rem !important;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.glass-nav .nav-link:hover {
+  color: #fff !important;
+}
+
+.glass-nav .nav-link.active {
+  color: #fff !important;
+}
+
+.glass-nav .nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 4px;
+  background: #00c853;
+  border-radius: 50%;
+}
+
+/* ---------- Unified Site Footer - Apple Style ----------- */
+.site-footer {
+  background: #000;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 3rem 0 2rem;
+  position: relative;
+  z-index: 100;
+}
+
+.site-footer .container {
+  max-width: 1200px;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #f5f5f7;
+  letter-spacing: -0.5px;
+}
+
+.footer-brand i {
+  font-size: 1.5rem;
+  color: #00c853;
+}
+
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem 1.5rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.footer-nav a {
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  font-size: 0.875rem;
+  transition: color 0.3s ease;
+}
+
+.footer-nav a:hover {
+  color: #fff;
+}
+
+.footer-divider {
+  width: 100%;
+  max-width: 600px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+  margin: 0.5rem 0;
+}
+
+.footer-badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.footer-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.375rem 0.75rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 100px;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-copy {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.75rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  font-size: 0.75rem;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #fff;
+}
+
+/* Footer Responsive */
+@media (max-width: 768px) {
+  .site-footer {
+    padding: 2rem 1rem 1.5rem;
+  }
+  
+  .footer-content {
+    gap: 1rem;
+  }
+  
+  .footer-nav {
+    gap: 0.25rem 1rem;
+  }
+  
+  .footer-badges {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .footer-links {
+    gap: 1rem;
+  }
+}
+
+/* ---------- Scroll to Top Button ----------------------- */
+.scroll-top-btn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 48px;
+  height: 48px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.scroll-top-btn.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.scroll-top-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-3px);
+}
+
+.scroll-top-btn i {
+  font-size: 1.25rem;
 }
