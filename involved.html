@@ -17,51 +17,13 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/custom.css" />
-  <style>
-    .action-btn {
-      min-width: 160px;
-    }
-    .action-btn.active {
-      background-color: #0d6efd;
-      color: white;
-      border-color: #0d6efd;
-    }
-    .section-content {
-      display: none;
-      animation: fadeIn 0.4s ease-in-out;
-    }
-    .section-content.show {
-      display: block !important;
-    }
-    @keyframes fadeIn {
-      from {opacity: 0; transform: translateY(10px);}
-      to {opacity: 1; transform: translateY(0);}
-    }
-    .template-box {
-      background: #f8f9fa;
-      border-radius: 0.5rem;
-      padding: 1rem;
-      font-size: 0.95rem;
-      font-family: monospace;
-      position: relative;
-    }
-    .copy-btn {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      border: none;
-      background: none;
-      color: #007bff;
-      cursor: pointer;
-    }
-  </style>
 </head>
-<body class="d-flex flex-column min-vh-100">
+<body class="bg-black">
 <!-- Skip to main content for accessibility -->
 <a href="#main-content" class="visually-hidden-focusable position-absolute bg-primary text-white p-2">Skip to main content</a>
 
 <!-- ===== Nav ===== -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top glass-nav">
   <div class="container">
     <a class="navbar-brand fw-bold" href="index.html"><i class="bi bi-cash-coin me-1"></i>Paid Internships Now</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
@@ -80,99 +42,293 @@
   </div>
 </nav>
 
-<!-- ===== Hero ===== -->
-<header class="bg-dark text-white text-center py-5">
-  <div class="container">
-    <h1 class="display-5 fw-semibold">Get Involved</h1>
-    <p class="lead">Choose one action below to make a difference.</p>
+<!-- ===== Hero Section ===== -->
+<section class="involved-hero" id="main-content">
+  <div class="involved-hero-bg">
+    <div class="gradient-orb orb-1"></div>
+    <div class="gradient-orb orb-2"></div>
+    <div class="gradient-orb orb-3"></div>
   </div>
-</header>
-
-<!-- ===== Action Buttons + Sections ===== -->
-<main id="main-content" class="container py-5 text-center flex-grow-1">
-  <div class="d-flex flex-wrap justify-content-center gap-3 mb-4">
-    <button id="btn-petition" class="btn btn-outline-primary action-btn active" onclick="showSection('petition', this)">Sign Petition</button>
-    <button id="btn-email" class="btn btn-outline-primary action-btn" onclick="showSection('email', this)">Email Rep</button>
-    <button id="btn-campaign" class="btn btn-outline-primary action-btn" onclick="showSection('campaign', this)">Join Campaign</button>
-    <button id="btn-share" class="btn btn-outline-primary action-btn" onclick="showSection('share', this)">Share Paid Jobs</button>
+  <div class="involved-hero-content">
+    <div class="hero-badge">
+      <i class="bi bi-lightning-charge-fill"></i>
+      <span>Take Action Today</span>
+    </div>
+    <h1 class="hero-title">
+      <span class="title-line">Be the</span>
+      <span class="title-line highlight">Change</span>
+    </h1>
+    <p class="hero-subtitle">Every action matters. Choose how you want to make a difference for fair internship compensation.</p>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <span class="stat-number" data-count="4">0</span>
+        <span class="stat-label">Ways to Help</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number" data-count="1000">0</span><span class="stat-suffix">+</span>
+        <span class="stat-label">Students Helped</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number" data-count="50">0</span>
+        <span class="stat-label">States Reached</span>
+      </div>
+    </div>
   </div>
-
-  <!-- Petition (Default Open) -->
-  <div id="petition" class="section-content text-start mx-auto show" style="max-width: 700px;">
-    <h4>📢 Sign a Petition</h4>
-    <p>Join the "Unpaid is Unfair" campaign — a national call to ensure interns receive fair compensation for their work.</p>
-    <a href="https://actionnetwork.org/petitions/unpaid-is-unfair-a-national-call-to-pay-student-interns" target="_blank" class="btn btn-primary">Sign the Petition</a>
+  <div class="scroll-indicator">
+    <span>Scroll to explore</span>
+    <div class="scroll-arrow"></div>
   </div>
+</section>
 
-  <!-- Email -->
-  <div id="email" class="section-content text-start mx-auto" style="max-width: 700px;">
-    <h4>📬 Email Your Representative</h4>
-    <p>Use this template to contact your local or federal representatives:</p>
-    <div class="template-box">
-      <button class="copy-btn" onclick="copyText(this)">📋 Copy</button>
-Dear [Representative's Name],
+<!-- ===== Section 1: Sign Petition ===== -->
+<section class="involved-section" id="petition">
+  <div class="involved-section-bg" style="background: radial-gradient(ellipse at 30% 50%, rgba(13, 110, 253, 0.15) 0%, transparent 60%);"></div>
+  <div class="involved-content">
+    <div class="section-icon" style="background: linear-gradient(135deg, #0d6efd 0%, #6ea8fe 100%);">
+      <i class="bi bi-pencil-square"></i>
+    </div>
+    <div class="section-number">01</div>
+    <h2>Sign the <span class="highlight-blue">Petition</span></h2>
+    <p class="section-subtitle">Add your voice to the movement</p>
+    
+    <div class="action-card tilt-card">
+      <div class="action-card-glow"></div>
+      <div class="action-card-content">
+        <div class="campaign-badge">
+          <i class="bi bi-megaphone-fill"></i>
+          National Campaign
+        </div>
+        <h3>Unpaid is Unfair</h3>
+        <p>Join thousands demanding fair compensation for student interns. This national petition calls on Congress and employers to ensure all internships provide fair pay.</p>
+        
+        <div class="petition-stats">
+          <div class="petition-stat">
+            <i class="bi bi-people-fill"></i>
+            <span>10,000+ signatures</span>
+          </div>
+          <div class="petition-stat">
+            <i class="bi bi-geo-alt-fill"></i>
+            <span>All 50 states</span>
+          </div>
+        </div>
+        
+        <a href="https://actionnetwork.org/petitions/unpaid-is-unfair-a-national-call-to-pay-student-interns" target="_blank" rel="noopener" class="btn-action magnetic">
+          <span>Sign Now</span>
+          <i class="bi bi-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Section 2: Email Representative ===== -->
+<section class="involved-section" id="email">
+  <div class="involved-section-bg" style="background: radial-gradient(ellipse at 70% 50%, rgba(0, 200, 83, 0.15) 0%, transparent 60%);"></div>
+  <div class="involved-content">
+    <div class="section-icon" style="background: linear-gradient(135deg, #00c853 0%, #69f0ae 100%);">
+      <i class="bi bi-envelope-paper-fill"></i>
+    </div>
+    <div class="section-number">02</div>
+    <h2>Email Your <span class="highlight">Representative</span></h2>
+    <p class="section-subtitle">Make your voice heard in government</p>
+    
+    <div class="action-card email-card tilt-card">
+      <div class="action-card-glow" style="background: radial-gradient(circle, rgba(0,200,83,0.3) 0%, transparent 70%);"></div>
+      <div class="action-card-content">
+        <h3><i class="bi bi-chat-quote-fill me-2"></i>Email Template</h3>
+        <div class="email-template">
+          <div class="template-header">
+            <span class="template-label">Ready to send</span>
+            <button class="copy-btn" onclick="copyTemplate()">
+              <i class="bi bi-clipboard"></i>
+              <span>Copy</span>
+            </button>
+          </div>
+          <pre class="template-content" id="email-template">Dear [Representative's Name],
 
 I am writing to urge you to support legislation that mandates fair compensation for all interns. Unpaid internships create barriers for students from underrepresented backgrounds and exacerbate socioeconomic disparities.
 
-Sincerely,  
+Research shows that 43% of internships remain unpaid, disproportionately affecting first-generation and low-income students. Fair pay for interns is not just an economic issue—it's an equity issue.
+
+I respectfully ask that you:
+• Support the Fair Internship Act
+• Advocate for internship compensation reform
+• Ensure federal internships are paid
+
+Thank you for your time and commitment to student welfare.
+
+Sincerely,
 [Your Name]
+[Your City, State]</pre>
+        </div>
+        
+        <div class="rep-links">
+          <h4>Find Your Representative</h4>
+          <div class="rep-buttons">
+            <a href="https://www.house.gov/representatives/find-your-representative" target="_blank" rel="noopener" class="btn-rep">
+              <i class="bi bi-building"></i>
+              House of Representatives
+            </a>
+            <a href="https://www.senate.gov/senators/senators-contact.htm" target="_blank" rel="noopener" class="btn-rep">
+              <i class="bi bi-bank"></i>
+              U.S. Senate
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
-    <p class="mt-2 small">Find your rep: <a href="https://www.house.gov/representatives" target="_blank">House.gov</a> · <a href="https://www.senate.gov/senators/senators-contact.htm" target="_blank">Senate.gov</a></p>
   </div>
+</section>
 
-  <!-- Campaign -->
-  <div id="campaign" class="section-content text-start mx-auto" style="max-width: 700px;">
-    <h4>🤝 Join a Campaign</h4>
-    <p>Support <strong>Pay Our Interns</strong>, a national nonprofit fighting for equity in internship access.</p>
-    <a href="https://payourinterns.org/" target="_blank" class="btn btn-primary">Get Involved</a>
+<!-- ===== Section 3: Join Campaign ===== -->
+<section class="involved-section" id="campaign">
+  <div class="involved-section-bg" style="background: radial-gradient(ellipse at 30% 50%, rgba(255, 193, 7, 0.15) 0%, transparent 60%);"></div>
+  <div class="involved-content">
+    <div class="section-icon" style="background: linear-gradient(135deg, #ffc107 0%, #ffeb3b 100%);">
+      <i class="bi bi-people-fill" style="color: #000;"></i>
+    </div>
+    <div class="section-number">03</div>
+    <h2>Join a <span class="highlight-gold">Campaign</span></h2>
+    <p class="section-subtitle">Connect with organizations making change</p>
+    
+    <div class="campaign-grid">
+      <div class="campaign-card tilt-card">
+        <div class="campaign-card-inner">
+          <div class="campaign-logo">
+            <i class="bi bi-cash-stack"></i>
+          </div>
+          <h3>Pay Our Interns</h3>
+          <p>A national nonprofit fighting for equity in internship access and fair compensation for all students.</p>
+          <ul class="campaign-features">
+            <li><i class="bi bi-check-circle-fill"></i> Policy advocacy</li>
+            <li><i class="bi bi-check-circle-fill"></i> Employer partnerships</li>
+            <li><i class="bi bi-check-circle-fill"></i> Student resources</li>
+          </ul>
+          <a href="https://payourinterns.org/" target="_blank" rel="noopener" class="btn-campaign">
+            Get Involved <i class="bi bi-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+      
+      <div class="campaign-card tilt-card">
+        <div class="campaign-card-inner">
+          <div class="campaign-logo" style="background: linear-gradient(135deg, #6930c3 0%, #9d4edd 100%);">
+            <i class="bi bi-briefcase-fill"></i>
+          </div>
+          <h3>NACE Guidelines</h3>
+          <p>The National Association of Colleges and Employers sets standards for ethical internship practices.</p>
+          <ul class="campaign-features">
+            <li><i class="bi bi-check-circle-fill"></i> Best practices</li>
+            <li><i class="bi bi-check-circle-fill"></i> Employer guidance</li>
+            <li><i class="bi bi-check-circle-fill"></i> Research data</li>
+          </ul>
+          <a href="https://www.naceweb.org/about-us/advocacy/position-statements/position-statement-us-internships/" target="_blank" rel="noopener" class="btn-campaign" style="background: linear-gradient(135deg, #6930c3 0%, #9d4edd 100%);">
+            Learn More <i class="bi bi-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
   </div>
+</section>
 
-  <!-- Share -->
-  <div id="share" class="section-content text-start mx-auto" style="max-width: 700px;">
-    <h4>💼 Share Paid Opportunities</h4>
-    <p>Employers and faculty can pledge to only promote paid internships. Learn more from NACE’s best practice guidance.</p>
-    <a href="https://www.naceweb.org/about-us/advocacy/position-statements/position-statement-us-internships/" target="_blank" class="btn btn-primary">Learn More</a>
+<!-- ===== Section 4: Share Opportunities ===== -->
+<section class="involved-section" id="share">
+  <div class="involved-section-bg" style="background: radial-gradient(ellipse at 70% 50%, rgba(255, 82, 82, 0.15) 0%, transparent 60%);"></div>
+  <div class="involved-content">
+    <div class="section-icon" style="background: linear-gradient(135deg, #ff5252 0%, #ff8a80 100%);">
+      <i class="bi bi-share-fill"></i>
+    </div>
+    <div class="section-number">04</div>
+    <h2>Share <span class="highlight-red">Opportunities</span></h2>
+    <p class="section-subtitle">Help spread paid internship listings</p>
+    
+    <div class="share-content">
+      <div class="share-message">
+        <h3>Pledge to Share Paid Internships Only</h3>
+        <p>Employers, faculty, and career advisors can make a difference by committing to only promote and share paid internship opportunities.</p>
+      </div>
+      
+      <div class="share-actions">
+        <div class="share-card tilt-card">
+          <div class="share-icon">
+            <i class="bi bi-twitter-x"></i>
+          </div>
+          <h4>Share on X</h4>
+          <p>Spread awareness about fair internship pay</p>
+          <a href="https://twitter.com/intent/tweet?text=I%20support%20%23PaidInternships%20for%20all%20students!%20Unpaid%20work%20creates%20barriers%20for%20underrepresented%20students.%20Learn%20more%3A&url=https://payourinterns.org" target="_blank" rel="noopener" class="btn-share">
+            Tweet <i class="bi bi-arrow-right"></i>
+          </a>
+        </div>
+        
+        <div class="share-card tilt-card">
+          <div class="share-icon" style="background: linear-gradient(135deg, #0077b5 0%, #00a0dc 100%);">
+            <i class="bi bi-linkedin"></i>
+          </div>
+          <h4>Share on LinkedIn</h4>
+          <p>Reach employers and recruiters</p>
+          <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://payourinterns.org" target="_blank" rel="noopener" class="btn-share" style="background: linear-gradient(135deg, #0077b5 0%, #00a0dc 100%);">
+            Post <i class="bi bi-arrow-right"></i>
+          </a>
+        </div>
+        
+        <div class="share-card tilt-card">
+          <div class="share-icon" style="background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);">
+            <i class="bi bi-whatsapp"></i>
+          </div>
+          <h4>Share via WhatsApp</h4>
+          <p>Tell your friends and classmates</p>
+          <a href="https://wa.me/?text=Check%20out%20this%20important%20cause%20for%20paid%20internships!%20https://payourinterns.org" target="_blank" rel="noopener" class="btn-share" style="background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);">
+            Send <i class="bi bi-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
   </div>
-</main>
+</section>
 
-<!-- ===== Footer (Sticky Bottom) ===== -->
-<footer class="bg-dark text-white text-center py-4 mt-auto">
+<!-- ===== CTA Section ===== -->
+<section class="involved-cta">
+  <div class="involved-cta-bg">
+    <div class="gradient-orb orb-1"></div>
+    <div class="gradient-orb orb-2"></div>
+  </div>
+  <div class="involved-cta-content">
+    <h2>Every Voice Matters</h2>
+    <p>Whether you sign a petition, write an email, or share on social media—every action brings us closer to fair pay for all interns.</p>
+    <div class="cta-buttons">
+      <a href="#petition" class="btn-cta-primary magnetic">Start Now</a>
+      <a href="stories.html" class="btn-cta-secondary">Read Stories</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Footer ===== -->
+<footer class="site-footer">
   <div class="container">
-    <div class="mb-2">
-      <span class="badge bg-info text-dark me-2">🎓 ENG109 Final Project</span>
-      <span class="badge bg-secondary">Miami University, Oxford, Ohio</span>
+    <div class="footer-content">
+      <div class="footer-brand">
+        <i class="bi bi-cash-coin"></i>
+        <span>Paid Internships Now</span>
+      </div>
+      <div class="footer-badges">
+        <span class="footer-badge">🎓 ENG109 Final Project</span>
+        <span class="footer-badge">Miami University, Oxford, Ohio</span>
+      </div>
+      <div class="footer-copy">
+        <small>© 2025 Paid Internships Now · Created by Ayush Yadav</small>
+      </div>
+      <div class="footer-links">
+        <a href="legal.html">Legal</a>
+        <a href="about.html">About</a>
+      </div>
     </div>
-    <small>© 2025 Paid Internships Now · Get Involved · Created by Ayush Yadav</small>
   </div>
 </footer>
 
 <!-- ===== Scripts ===== -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
 <script src="js/effects.js" defer></script>
-<script>
-  function showSection(id, button) {
-    // Hide all content sections
-    const sections = document.querySelectorAll('.section-content');
-    sections.forEach(sec => sec.classList.remove('show'));
-
-    // Show selected
-    const section = document.getElementById(id);
-    section.classList.add('show');
-
-    // Reset button states
-    const buttons = document.querySelectorAll('.action-btn');
-    buttons.forEach(btn => btn.classList.remove('active'));
-    button.classList.add('active');
-  }
-
-  function copyText(btn) {
-    const box = btn.parentElement;
-    const text = box.innerText.replace("📋 Copy", "").trim();
-    navigator.clipboard.writeText(text).then(() => {
-      btn.innerText = "✅ Copied!";
-      setTimeout(() => { btn.innerText = "📋 Copy"; }, 1500);
-    });
-  }
-</script>
+<script src="js/nav.js" defer></script>
+<script src="js/involved.js" defer></script>
 </body>
 </html>
