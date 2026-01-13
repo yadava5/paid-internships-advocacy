@@ -18,16 +18,14 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/custom.css" />
 </head>
-<body class="d-flex flex-column min-vh-100">
+<body class="bg-black">
 <!-- Skip to main content for accessibility -->
 <a href="#main-content" class="visually-hidden-focusable position-absolute bg-primary text-white p-2">Skip to main content</a>
 
 <!-- ===== Nav ===== -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top glass-nav">
   <div class="container">
-    <a class="navbar-brand fw-bold" href="index.html">
-      <i class="bi bi-cash-coin me-1"></i>Paid Internships Now
-    </a>
+    <a class="navbar-brand fw-bold" href="index.html"><i class="bi bi-cash-coin me-1"></i>Paid Internships Now</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -44,86 +42,347 @@
   </div>
 </nav>
 
-<!-- ===== Hero ===== -->
-<header class="bg-dark text-white text-center py-5">
-  <div class="container">
-    <h1 class="display-5 fw-semibold">About This Project</h1>
-    <p class="lead">Why we built this site and what it hopes to change.</p>
+<!-- ===== Hero Section ===== -->
+<section class="about-hero" id="main-content">
+  <div class="about-hero-bg">
+    <div class="gradient-orb orb-1"></div>
+    <div class="gradient-orb orb-2"></div>
+    <div class="hero-pattern"></div>
   </div>
-</header>
+  <div class="about-hero-content">
+    <div class="hero-badge">
+      <i class="bi bi-mortarboard-fill"></i>
+      <span>ENG109 Final Project</span>
+    </div>
+    <h1 class="hero-title">
+      <span class="title-line">About This</span>
+      <span class="title-line highlight">Project</span>
+    </h1>
+    <p class="hero-subtitle">A student-led advocacy website created to promote fair compensation for all interns.</p>
+    <div class="hero-info">
+      <div class="info-item">
+        <i class="bi bi-geo-alt-fill"></i>
+        <span>Miami University, Oxford, Ohio</span>
+      </div>
+      <div class="info-item">
+        <i class="bi bi-calendar-fill"></i>
+        <span>Spring 2025</span>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-indicator">
+    <span>Scroll to learn more</span>
+    <div class="scroll-arrow"></div>
+  </div>
+</section>
 
-<!-- ===== About Content ===== -->
-<main id="main-content" class="container py-5 flex-grow-1">
-  <div class="row justify-content-center">
-    <div class="col-lg-8">
+<!-- ===== Section 1: Mission ===== -->
+<section class="about-section" id="mission">
+  <div class="about-section-bg" style="background: radial-gradient(ellipse at 30% 50%, rgba(0, 200, 83, 0.15) 0%, transparent 60%);"></div>
+  <div class="about-content">
+    <div class="section-icon">
+      <i class="bi bi-bullseye"></i>
+    </div>
+    <div class="section-number">01</div>
+    <h2>Our <span class="highlight">Mission</span></h2>
+    <p class="section-subtitle">Why this matters</p>
     
-      <!-- Course Badge -->
-      <div class="alert alert-info border-0 shadow-sm mb-5" role="alert">
-        <div class="d-flex align-items-center">
-          <i class="bi bi-mortarboard-fill fs-2 me-3 text-primary"></i>
-          <div>
-            <h5 class="alert-heading mb-1">🎓 ENG109 Final Project</h5>
-            <p class="mb-0">This website was created as a final class project for <strong>ENG109: Digital Composition</strong> at <strong>Miami University, Oxford, Ohio</strong>.</p>
+    <div class="mission-content">
+      <div class="mission-statement tilt-card">
+        <blockquote>
+          "To advocate for fair compensation in internships, ensuring every student has equal access to career-building opportunities regardless of their economic background."
+        </blockquote>
+      </div>
+      
+      <div class="mission-points">
+        <div class="mission-point">
+          <div class="point-icon">
+            <i class="bi bi-graph-down-arrow"></i>
+          </div>
+          <div class="point-content">
+            <h4>The Problem</h4>
+            <p>Unpaid internships create barriers for students from low-income backgrounds, perpetuating inequality in professional opportunities.</p>
+          </div>
+        </div>
+        
+        <div class="mission-point">
+          <div class="point-icon">
+            <i class="bi bi-lightbulb-fill"></i>
+          </div>
+          <div class="point-content">
+            <h4>The Solution</h4>
+            <p>Through awareness, data, and advocacy, we can push for policy changes and employer accountability.</p>
+          </div>
+        </div>
+        
+        <div class="mission-point">
+          <div class="point-icon">
+            <i class="bi bi-rocket-takeoff-fill"></i>
+          </div>
+          <div class="point-content">
+            <h4>The Goal</h4>
+            <p>A future where every internship provides fair compensation, creating an equitable path to career success.</p>
           </div>
         </div>
       </div>
-
-      <!-- Mission -->
-      <section class="mb-5">
-        <h3>🎯 Our Mission</h3>
-        <p>
-          Unpaid internships continue to limit access to valuable opportunities for thousands of college students—especially those from low-income or underrepresented backgrounds. This site was built to highlight the real consequences of unpaid internships and promote efforts to ensure all internships are fairly compensated.
-        </p>
-        <p>
-          Through a mix of personal stories, data visualizations, legal insights, and advocacy links, this site aims to inspire awareness and action for internship reform.
-        </p>
-      </section>
-
-      <!-- Creator -->
-      <section class="mb-5">
-        <h3>👋 Created By</h3>
-        <p>
-          This website was developed as a <strong>final class project for ENG109: Digital Composition</strong> at <strong>Miami University, Oxford, Ohio</strong>. The project explores the intersection of digital rhetoric, visual design, and advocacy to highlight an important social issue affecting college students nationwide.
-        </p>
-        <p>
-          It was designed and coded using HTML, CSS, JavaScript, and Bootstrap. All research and content reflect the goals of student advocacy, digital literacy, and multimodal composition.
-        </p>
-        <div class="card bg-light border-0 p-3 mt-3">
-          <p class="mb-1"><strong><i class="bi bi-person-fill"></i> Created by:</strong> Ayush Yadav</p>
-          <p class="mb-1"><strong><i class="bi bi-book-fill"></i> Course:</strong> ENG109 - Digital Composition</p>
-          <p class="mb-1"><strong><i class="bi bi-building"></i> Institution:</strong> Miami University, Oxford, Ohio</p>
-          <p class="mb-0"><strong><i class="bi bi-calendar-fill"></i> Term:</strong> Spring 2025</p>
-        </div>
-      </section>
-
-      <!-- Sources -->
-      <section>
-        <h3>📚 Data & Source Highlights</h3>
-        <ul>
-          <li>National Association of Colleges and Employers (NACE) – <a href="https://www.naceweb.org" target="_blank">naceweb.org</a></li>
-          <li>Pay Our Interns – <a href="https://payourinterns.org" target="_blank">payourinterns.org</a></li>
-          <li>U.S. Department of Labor – <a href="https://www.dol.gov" target="_blank">dol.gov</a></li>
-          <li>Center for Research on College-Workforce Transitions – <a href="https://ccwt.wisc.edu" target="_blank">ccwt.wisc.edu</a></li>
-        </ul>
-        <p class="text-muted">All images used are sourced from free public image libraries or licensed under Creative Commons.</p>
-      </section>
-
     </div>
   </div>
-</main>
+</section>
+
+<!-- ===== Section 2: Creator ===== -->
+<section class="about-section" id="creator">
+  <div class="about-section-bg" style="background: radial-gradient(ellipse at 70% 50%, rgba(13, 110, 253, 0.15) 0%, transparent 60%);"></div>
+  <div class="about-content">
+    <div class="section-icon" style="background: linear-gradient(135deg, #0d6efd 0%, #6ea8fe 100%);">
+      <i class="bi bi-person-fill"></i>
+    </div>
+    <div class="section-number">02</div>
+    <h2>Created <span class="highlight-blue">By</span></h2>
+    <p class="section-subtitle">The person behind this project</p>
+    
+    <div class="creator-card tilt-card">
+      <div class="creator-avatar">
+        <div class="avatar-circle">
+          <i class="bi bi-code-slash"></i>
+        </div>
+        <div class="avatar-glow"></div>
+      </div>
+      <div class="creator-info">
+        <h3>Ayush Yadav</h3>
+        <p class="creator-role">Student Developer & Advocate</p>
+        <p class="creator-bio">This website was developed as a final class project for ENG109: Digital Composition at Miami University, Oxford, Ohio. The project explores the intersection of digital rhetoric, visual design, and advocacy to highlight an important social issue affecting college students nationwide.</p>
+        
+        <div class="creator-details">
+          <div class="detail-item">
+            <i class="bi bi-book-fill"></i>
+            <span>ENG109 - Digital Composition</span>
+          </div>
+          <div class="detail-item">
+            <i class="bi bi-building"></i>
+            <span>Miami University</span>
+          </div>
+          <div class="detail-item">
+            <i class="bi bi-geo-alt-fill"></i>
+            <span>Oxford, Ohio</span>
+          </div>
+          <div class="detail-item">
+            <i class="bi bi-calendar-fill"></i>
+            <span>Spring 2025</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Section 3: Technology ===== -->
+<section class="about-section" id="tech">
+  <div class="about-section-bg" style="background: radial-gradient(ellipse at 30% 50%, rgba(255, 193, 7, 0.15) 0%, transparent 60%);"></div>
+  <div class="about-content">
+    <div class="section-icon" style="background: linear-gradient(135deg, #ffc107 0%, #ffeb3b 100%);">
+      <i class="bi bi-code-square" style="color: #000;"></i>
+    </div>
+    <div class="section-number">03</div>
+    <h2>Built <span class="highlight-gold">With</span></h2>
+    <p class="section-subtitle">The technologies powering this site</p>
+    
+    <div class="tech-grid">
+      <div class="tech-card tilt-card">
+        <div class="tech-icon">
+          <i class="bi bi-filetype-html"></i>
+        </div>
+        <h4>HTML5</h4>
+        <p>Semantic, accessible markup</p>
+      </div>
+      
+      <div class="tech-card tilt-card">
+        <div class="tech-icon" style="background: linear-gradient(135deg, #264de4 0%, #2965f1 100%);">
+          <i class="bi bi-filetype-css"></i>
+        </div>
+        <h4>CSS3</h4>
+        <p>Modern animations & effects</p>
+      </div>
+      
+      <div class="tech-card tilt-card">
+        <div class="tech-icon" style="background: linear-gradient(135deg, #f7df1e 0%, #ffeb3b 100%);">
+          <i class="bi bi-filetype-js" style="color: #000;"></i>
+        </div>
+        <h4>JavaScript</h4>
+        <p>Interactive experiences</p>
+      </div>
+      
+      <div class="tech-card tilt-card">
+        <div class="tech-icon" style="background: linear-gradient(135deg, #7952b3 0%, #9d4edd 100%);">
+          <i class="bi bi-bootstrap-fill"></i>
+        </div>
+        <h4>Bootstrap 5</h4>
+        <p>Responsive framework</p>
+      </div>
+      
+      <div class="tech-card tilt-card">
+        <div class="tech-icon" style="background: linear-gradient(135deg, #ff6384 0%, #ff9f40 100%);">
+          <i class="bi bi-bar-chart-fill"></i>
+        </div>
+        <h4>Chart.js</h4>
+        <p>Data visualizations</p>
+      </div>
+      
+      <div class="tech-card tilt-card">
+        <div class="tech-icon" style="background: linear-gradient(135deg, #24292e 0%, #586069 100%);">
+          <i class="bi bi-github"></i>
+        </div>
+        <h4>GitHub</h4>
+        <p>Version control</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Section 4: Sources ===== -->
+<section class="about-section" id="sources">
+  <div class="about-section-bg" style="background: radial-gradient(ellipse at 70% 50%, rgba(105, 48, 195, 0.15) 0%, transparent 60%);"></div>
+  <div class="about-content">
+    <div class="section-icon" style="background: linear-gradient(135deg, #6930c3 0%, #9d4edd 100%);">
+      <i class="bi bi-journal-bookmark-fill"></i>
+    </div>
+    <div class="section-number">04</div>
+    <h2>Data & <span class="highlight-purple">Sources</span></h2>
+    <p class="section-subtitle">Research that powers our advocacy</p>
+    
+    <div class="sources-grid">
+      <a href="https://www.naceweb.org" target="_blank" rel="noopener" class="source-card tilt-card">
+        <div class="source-icon">
+          <i class="bi bi-briefcase-fill"></i>
+        </div>
+        <div class="source-info">
+          <h4>NACE</h4>
+          <p>National Association of Colleges and Employers</p>
+          <span class="source-url">naceweb.org</span>
+        </div>
+        <i class="bi bi-arrow-up-right"></i>
+      </a>
+      
+      <a href="https://payourinterns.org" target="_blank" rel="noopener" class="source-card tilt-card">
+        <div class="source-icon" style="background: linear-gradient(135deg, #00c853 0%, #69f0ae 100%);">
+          <i class="bi bi-cash-stack"></i>
+        </div>
+        <div class="source-info">
+          <h4>Pay Our Interns</h4>
+          <p>National nonprofit for intern advocacy</p>
+          <span class="source-url">payourinterns.org</span>
+        </div>
+        <i class="bi bi-arrow-up-right"></i>
+      </a>
+      
+      <a href="https://www.dol.gov" target="_blank" rel="noopener" class="source-card tilt-card">
+        <div class="source-icon" style="background: linear-gradient(135deg, #0d6efd 0%, #6ea8fe 100%);">
+          <i class="bi bi-bank"></i>
+        </div>
+        <div class="source-info">
+          <h4>U.S. Department of Labor</h4>
+          <p>Federal labor laws and guidelines</p>
+          <span class="source-url">dol.gov</span>
+        </div>
+        <i class="bi bi-arrow-up-right"></i>
+      </a>
+      
+      <a href="https://ccwt.wisc.edu" target="_blank" rel="noopener" class="source-card tilt-card">
+        <div class="source-icon" style="background: linear-gradient(135deg, #ff5252 0%, #ff8a80 100%);">
+          <i class="bi bi-journal-richtext"></i>
+        </div>
+        <div class="source-info">
+          <h4>CCWT</h4>
+          <p>Center for Research on College-Workforce Transitions</p>
+          <span class="source-url">ccwt.wisc.edu</span>
+        </div>
+        <i class="bi bi-arrow-up-right"></i>
+      </a>
+      
+      <a href="https://www.brookings.edu" target="_blank" rel="noopener" class="source-card tilt-card">
+        <div class="source-icon" style="background: linear-gradient(135deg, #003366 0%, #0066cc 100%);">
+          <i class="bi bi-bank2"></i>
+        </div>
+        <div class="source-info">
+          <h4>Brookings Institution</h4>
+          <p>Metropolitan Policy Program research on income inequality</p>
+          <span class="source-url">brookings.edu</span>
+        </div>
+        <i class="bi bi-arrow-up-right"></i>
+      </a>
+      
+      <a href="https://www.epi.org" target="_blank" rel="noopener" class="source-card tilt-card">
+        <div class="source-icon" style="background: linear-gradient(135deg, #1a472a 0%, #2e7d32 100%);">
+          <i class="bi bi-graph-up-arrow"></i>
+        </div>
+        <div class="source-info">
+          <h4>Economic Policy Institute</h4>
+          <p>Intern labor market research and analysis</p>
+          <span class="source-url">epi.org</span>
+        </div>
+        <i class="bi bi-arrow-up-right"></i>
+      </a>
+    </div>
+    
+    <div class="sources-note">
+      <i class="bi bi-info-circle-fill"></i>
+      <p>All statistics on this site are sourced from peer-reviewed research and official government data. Images are from free public libraries or licensed under Creative Commons.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA Section ===== -->
+<section class="about-cta">
+  <div class="about-cta-bg">
+    <div class="gradient-orb orb-1"></div>
+    <div class="gradient-orb orb-2"></div>
+  </div>
+  <div class="about-cta-content">
+    <h2>Ready to Make a Difference?</h2>
+    <p>Join the movement for fair internship compensation. Every voice matters.</p>
+    <div class="cta-buttons">
+      <a href="involved.html" class="btn-cta-primary magnetic">Get Involved</a>
+      <a href="data.html" class="btn-cta-secondary">See the Data</a>
+    </div>
+  </div>
+</section>
 
 <!-- ===== Footer ===== -->
-<footer class="bg-dark text-white text-center py-3 mt-auto">
+<footer class="site-footer">
   <div class="container">
-    <small>© 2025 Paid Internships Now · ENG109 Final Project · Miami University, Oxford, Ohio</small>
-    <div class="mt-1">
-      <small class="text-muted">Created by Ayush Yadav</small>
+    <div class="footer-content">
+      <div class="footer-brand">
+        <i class="bi bi-cash-coin"></i>
+        <span>Paid Internships Now</span>
+      </div>
+      <nav class="footer-nav">
+        <a href="stories.html">Stories</a>
+        <a href="data.html">Data</a>
+        <a href="survey.html">Survey</a>
+        <a href="legal.html">Legal</a>
+        <a href="involved.html">Get Involved</a>
+        <a href="about.html">About</a>
+      </nav>
+      <div class="footer-divider"></div>
+      <div class="footer-badges">
+        <span class="footer-badge">🎓 ENG109 Final Project</span>
+        <span class="footer-badge">Miami University, Oxford, Ohio</span>
+      </div>
+      <div class="footer-copy">
+        <small>© 2025 Paid Internships Now · Created by Ayush Yadav</small>
+      </div>
     </div>
   </div>
 </footer>
 
+<!-- Scroll to Top Button -->
+<button id="scrollTopBtn" class="scroll-top-btn" aria-label="Scroll to top">
+  <i class="bi bi-chevron-up"></i>
+</button>
+
 <!-- ===== Scripts ===== -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
 <script src="js/effects.js" defer></script>
+<script src="js/nav.js" defer></script>
+<script src="js/about.js" defer></script>
 </body>
 </html>

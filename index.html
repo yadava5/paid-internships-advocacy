@@ -33,7 +33,7 @@
   <a href="#main-content" class="visually-hidden-focusable position-absolute bg-primary text-white p-2">Skip to main content</a>
 
   <!-- ===== Nav ========================================================= -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top glass-nav">
     <div class="container">
       <a class="navbar-brand fw-bold" href="index.html">
         <i class="bi bi-cash-coin me-1"></i>Paid Internships Now
@@ -132,22 +132,36 @@
   </section>
 
   <!-- ===== Footer ====================================================== -->
-  <footer class="bg-dark text-white text-center py-4">
+  <footer class="site-footer">
     <div class="container">
-      <div class="mb-2">
-        <span class="badge bg-info text-dark me-2">🎓 ENG109 Final Project</span>
-        <span class="badge bg-secondary">Miami University, Oxford, Ohio</span>
+      <div class="footer-content">
+        <div class="footer-brand">
+          <i class="bi bi-cash-coin"></i>
+          <span>Paid Internships Now</span>
+        </div>
+        <nav class="footer-nav">
+          <a href="stories.html">Stories</a>
+          <a href="data.html">Data</a>
+          <a href="survey.html">Survey</a>
+          <a href="legal.html">Legal</a>
+          <a href="involved.html">Get Involved</a>
+          <a href="about.html">About</a>
+        </nav>
+        <div class="footer-divider"></div>
+        <div class="footer-badges">
+          <span class="footer-badge">🎓 ENG109 Final Project</span>
+          <span class="footer-badge">Miami University, Oxford, Ohio</span>
+        </div>
+        <div class="footer-copy">
+          <small>© 2025 Paid Internships Now · Created by Ayush Yadav</small>
+        </div>
       </div>
-      <small>© 2025 Paid Internships Now · Created by Ayush Yadav</small>
     </div>
   </footer>
   
   <!-- Scroll to Top Button -->
-  <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" id="scrollTopBtn"
-    class="btn btn-primary rounded-circle position-fixed" 
-    style="bottom: 30px; right: 30px; width: 50px; height: 50px; display: none; z-index: 1000;"
-    aria-label="Scroll to top">
-    <i class="bi bi-arrow-up"></i>
+  <button id="scrollTopBtn" class="scroll-top-btn" aria-label="Scroll to top">
+    <i class="bi bi-chevron-up"></i>
   </button>
 
   <!-- ===== Scripts ===================================================== -->
