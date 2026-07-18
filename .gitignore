@@ -63,3 +63,7 @@ __pycache__/
 *.bak
 *.backup
 .sass-cache/
+
+# ---------- Local Tooling ---------------------------------
+.vercel
+.claude/
