@@ -2110,6 +2110,24 @@ body.survey-page {
   gap: 0.25rem;
 }
 
+/* One stat's value, as a single line. .stat-item is a flex column, so any
+   affix span placed directly in it becomes its own row — which is how "$20k"
+   came out as three stacked lines. Baseline alignment so a smaller suffix
+   ("%", "k") sits on the number's baseline rather than centred against it. */
+.stat-value {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.05em;
+}
+
+.stat-suffix {
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1;
+  color: inherit;
+}
+
 .stat-number {
   font-size: 2rem;
   font-weight: 700;

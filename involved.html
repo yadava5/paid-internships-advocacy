@@ -64,17 +64,22 @@
          with no analytics, no signup and no way to know whether it has helped
          anyone at all. They are replaced with two figures that are real,
          published, and about the problem rather than about this page. -->
+    <!-- The number and its affixes are wrapped in .stat-value because
+         .stat-item is a flex COLUMN: without the wrapper every child becomes
+         its own row, so "$20k" rendered as "$" / "20" / "k" on three stacked
+         lines. That was latent before ("1000" and "+" already stacked); adding
+         a prefix as well as a suffix made it obvious. -->
     <div class="hero-stats">
       <div class="stat-item">
-        <span class="stat-number" data-count="4">0</span>
+        <span class="stat-value"><span class="stat-number" data-count="4">0</span></span>
         <span class="stat-label">Ways to Help</span>
       </div>
       <div class="stat-item">
-        <span class="stat-number" data-count="40.8" data-decimals="1">0</span><span class="stat-suffix">%</span>
+        <span class="stat-value"><span class="stat-number" data-count="40.8" data-decimals="1">0</span><span class="stat-suffix">%</span></span>
         <span class="stat-label">Of Internships Unpaid</span>
       </div>
       <div class="stat-item">
-        <span class="stat-suffix">$</span><span class="stat-number" data-count="20">0</span><span class="stat-suffix">k</span>
+        <span class="stat-value"><span class="stat-suffix">$</span><span class="stat-number" data-count="20">0</span><span class="stat-suffix">k</span></span>
         <span class="stat-label">Starting Salary Gap</span>
       </div>
     </div>
