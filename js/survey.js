@@ -25,6 +25,13 @@
     // Next button
     nextBtn?.addEventListener('click', () => {
       if (currentStep < totalSteps) {
+        // Validate BEFORE advancing, so a required field complains on the step
+        // it lives on. Without this the form was a silent dead end: `status`
+        // and `field` are required and live on step 1, so by step 5 native
+        // validation blocked submit while the browser had no visible control
+        // to attach the message to. Finish did nothing, said nothing, and the
+        // visitor had no way to find out why.
+        if (!validateStep(currentStep)) return;
         goToStep(currentStep + 1);
       }
     });
@@ -158,6 +165,25 @@
         submitBtn.style.display = 'none';
       }
     }
+  }
+
+  /**
+   * True if every control on the given step passes native validation.
+   * Reports on the first failure so the browser puts its bubble on a control
+   * the user can actually see.
+   */
+  function validateStep(step) {
+    const panel = document.querySelector(`.survey-step[data-step="${step}"]`);
+    if (!panel) return true;
+
+    for (const field of panel.querySelectorAll('input, select, textarea')) {
+      if (!field.checkValidity()) {
+        field.reportValidity();
+        field.focus({ preventScroll: false });
+        return false;
+      }
+    }
+    return true;
   }
 
   function showThankYou() {

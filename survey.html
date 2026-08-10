@@ -41,21 +41,31 @@
 <section class="survey-hero" id="main-content">
   <div class="survey-hero-bg"></div>
   <div class="survey-hero-content">
-    <span class="survey-label"><i class="bi bi-clipboard-data"></i> Research Survey</span>
+    <!-- Was labelled "Research Survey" over the line "Help us understand…".
+         Neither survived contact with the code: nothing is gathered, so there
+         is no research and no "us" to help. It works as a reflection tool,
+         so that is what it now says it is. -->
+    <span class="survey-label"><i class="bi bi-clipboard-data"></i> Reflection Tool</span>
     <h1>Your Experience<br><span class="gradient-text">Matters.</span></h1>
-    <p class="lead">Help us understand the real impact of internship compensation on students' lives, careers, and wellbeing.</p>
+    <p class="lead">Five sections on what an unpaid internship actually costs — hours, money, and what it did to your plans. Nothing is collected. It is here so the numbers elsewhere on this site have something of yours to sit next to.</p>
+    <!-- These three used to read "500+ Responses", "5 min To Complete" and
+         "100% Anonymous". No responses had ever been collected: this form has
+         no action, no fetch and no storage, so 500+ was a number describing
+         nothing. "100% Anonymous" was true only by accident, and sat next to
+         a field asking for an email address. They now state what is actually
+         the case. -->
     <div class="survey-stats">
       <div class="stat-item">
-        <span class="stat-number">500+</span>
-        <span class="stat-label">Responses</span>
+        <span class="stat-number">5</span>
+        <span class="stat-label">Sections</span>
       </div>
       <div class="stat-item">
         <span class="stat-number">5 min</span>
         <span class="stat-label">To Complete</span>
       </div>
       <div class="stat-item">
-        <span class="stat-number">100%</span>
-        <span class="stat-label">Anonymous</span>
+        <span class="stat-number">Nothing</span>
+        <span class="stat-label">Is Stored</span>
       </div>
     </div>
     <a href="#survey-form" class="btn btn-warning btn-lg mt-4">
@@ -453,9 +463,18 @@
           Next <i class="bi bi-arrow-right"></i>
         </button>
         <button type="submit" class="btn-survey-submit" id="submitBtn" style="display: none;">
-          <i class="bi bi-check-circle me-2"></i>Submit Survey
+          <i class="bi bi-check-circle me-2"></i>Finish
         </button>
       </div>
+
+      <!-- Disclosed before the button, not after it. A visitor deciding
+           whether to type out their financial situation is entitled to know
+           it goes nowhere BEFORE they spend five minutes on it. -->
+      <p class="survey-nostore-note">
+        <i class="bi bi-info-circle me-1"></i>
+        This is a coursework prototype. Your answers stay in your browser, are
+        never sent anywhere, and are gone when you close the tab.
+      </p>
 
     </form>
 
@@ -464,10 +483,22 @@
       <div class="complete-icon">
         <i class="bi bi-check-circle-fill"></i>
       </div>
-      <h2>Thank You!</h2>
-      <p>Your response has been recorded. Your insights will help us advocate for fair internship practices.</p>
+      <h2>That's the end of it.</h2>
+      <!-- This said "Your response has been recorded. Your insights will help
+           us advocate for fair internship practices." Both sentences were
+           false. There is no recipient, no database and no request: the
+           handler hides the form and shows this panel. Telling a visitor
+           their story had been received, when it had not, is the one thing on
+           this site that could actually cost someone something. -->
+      <p>
+        Nothing was submitted, because there is nowhere for it to go. This is a
+        class project, not a research study, and it collects no data. If you
+        want your experience to count somewhere real, the petition on
+        <a href="involved.html">Get Involved</a> is a live campaign run by
+        people who do this full time.
+      </p>
       <div class="complete-actions">
-        <a href="stories.html" class="btn btn-outline-light btn-lg">Read Stories</a>
+        <a href="involved.html" class="btn btn-outline-light btn-lg">Get Involved</a>
         <a href="data.html" class="btn btn-warning btn-lg">Explore Data</a>
       </div>
     </div>

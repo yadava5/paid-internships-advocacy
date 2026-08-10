@@ -226,8 +226,12 @@
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           const counter = entry.target;
-          const target = parseInt(counter.dataset.count);
-          animateCounter(counter, target);
+          // parseFloat, not parseInt: one of these figures is 40.8, and
+          // rounding it to 41 put the headline number in disagreement with
+          // the citation printed directly beneath it.
+          const target = parseFloat(counter.dataset.count);
+          const decimals = parseInt(counter.dataset.decimals || '0', 10);
+          animateCounter(counter, target, decimals);
           observer.unobserve(counter);
         }
       });
@@ -236,7 +240,7 @@
     counters.forEach(counter => observer.observe(counter));
   }
 
-  function animateCounter(element, target) {
+  function animateCounter(element, target, decimals = 0) {
     const duration = 2000;
     const start = 0;
     const startTime = performance.now();
@@ -245,9 +249,14 @@
       const elapsed = currentTime - startTime;
       const progress = Math.min(elapsed / duration, 1);
       const easeProgress = 1 - Math.pow(1 - progress, 4);
-      const current = Math.floor(start + (target - start) * easeProgress);
-      
-      element.textContent = current.toLocaleString();
+      const raw = start + (target - start) * easeProgress;
+      const factor = Math.pow(10, decimals);
+      const current = Math.floor(raw * factor) / factor;
+
+      element.textContent = current.toLocaleString(undefined, {
+        minimumFractionDigits: decimals,
+        maximumFractionDigits: decimals,
+      });
       
       if (progress < 1) {
         requestAnimationFrame(update);

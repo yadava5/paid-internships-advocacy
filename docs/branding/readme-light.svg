@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="200" viewBox="0 0 760 200"
+     role="img" aria-label="Paid Internships Now. Experience Shouldn’t Cost You.">
+  <title>Paid Internships Now</title>
+  <style>
+    .name { font: 700 44px -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI",
+            Roboto, "Helvetica Neue", Arial, sans-serif; letter-spacing: -1px; }
+    .desc { font: 400 18px -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI",
+            Roboto, "Helvetica Neue", Arial, sans-serif; fill: #b3b3b8; }
+  </style>
+
+  <!-- The site is a cinematic black hero; the banner keeps that stage on both README themes. -->
+  <rect x="1" y="1" width="758" height="198" rx="16" fill="#000000"/>
+
+  <text x="380" y="102" text-anchor="middle" class="name"><tspan fill="#ffc107">Paid</tspan><tspan fill="#ffffff"> Internships Now</tspan></text>
+  <text x="380" y="144" text-anchor="middle" class="desc">Experience Shouldn’t Cost You</text>
+</svg>

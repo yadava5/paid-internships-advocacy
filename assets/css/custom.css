@@ -1740,10 +1740,14 @@ body.data-page {
 }
 
 /* ---------- Data Visual Block --------------------------- */
+/* Column, because the citation rendered by dataCharts.js sits directly under
+   the canvas it belongs to and travels with it through the parallax. */
 .data-visual {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 0.75rem;
   transition: transform 0.1s linear;
   width: 100%;
   height: 100%;
@@ -1765,6 +1769,29 @@ body.data-page {
 .chart-wrapper canvas {
   width: 100% !important;
   height: 100% !important;
+}
+
+/* ---------- Chart Citation ------------------------------
+   Written into the DOM by renderSources() in js/dataCharts.js, straight from
+   each dataset's `source` field. Quiet, but it has to be readable: at 0.6
+   alpha on black this clears WCAG AA for small text. The !important is only
+   there to beat the older global .chart-source rule further up this file. */
+.data-page .chart-source {
+  flex: 0 0 auto;
+  max-width: 640px;
+  margin: 0;
+  padding: 0 1rem;
+  font-size: 0.8125rem;
+  font-style: normal;
+  line-height: 1.5;
+  text-align: center;
+  text-wrap: balance;
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.data-page .chart-source .bi {
+  margin-right: 0.35rem;
+  opacity: 0.75;
 }
 
 /* Special chart wrappers */
@@ -2070,7 +2097,12 @@ body.survey-page {
   margin: 0 auto;
 }
 
-.survey-stats {
+/* involved.html's hero band shares this layout. It had NO rule of its own —
+   not here, not in Bootstrap — so its three .stat-item boxes, each a
+   block-level flex column, simply stacked full-width down the page. It reads
+   as a copy of .survey-stats that lost its layout line. */
+.survey-stats,
+.hero-stats {
   display: flex;
   justify-content: center;
   gap: 3rem;
@@ -2081,6 +2113,24 @@ body.survey-page {
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
+}
+
+/* One stat's value, as a single line. .stat-item is a flex column, so any
+   affix span placed directly in it becomes its own row — which is how "$20k"
+   came out as three stacked lines. Baseline alignment so a smaller suffix
+   ("%", "k") sits on the number's baseline rather than centred against it. */
+.stat-value {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.05em;
+}
+
+.stat-suffix {
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1;
+  color: inherit;
 }
 
 .stat-number {
@@ -2645,6 +2695,17 @@ body.survey-page {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+/* The "nothing is stored" disclosure under the form. Quiet on purpose —
+   it is a fact the reader needs, not a warning banner — but it sits above
+   the fold of the submit button rather than being tucked into the footer. */
+.survey-nostore-note {
+  margin: 1.5rem 0 0;
+  text-align: center;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.55);
+}
+
 .btn-survey-nav {
   display: flex;
   align-items: center;
@@ -2773,7 +2834,8 @@ body.survey-page {
     font-size: 1.1rem;
   }
   
-  .survey-stats {
+  .survey-stats,
+  .hero-stats {
     gap: 1.5rem;
   }
   
@@ -2851,7 +2913,8 @@ body.survey-page {
     font-size: 2.25rem;
   }
   
-  .survey-stats {
+  .survey-stats,
+  .hero-stats {
     flex-direction: column;
     gap: 1rem;
   }
@@ -4138,6 +4201,52 @@ body.legal-page {
 
 .petition-stat i {
   color: #00c853;
+}
+
+/* The composites disclosure at the top of stories.html. Sized to be read
+   rather than skipped: this is the page's most important sentence, because
+   every card under it is invented and used to claim otherwise. */
+.stories-disclosure {
+  padding: 7rem 1rem 0;
+}
+
+.stories-disclosure p {
+  max-width: 62ch;
+  margin: 0 auto;
+  padding: 1.25rem 1.5rem;
+  border-left: 3px solid #ffc107;
+  border-radius: 0 8px 8px 0;
+  background: rgba(255, 193, 7, 0.07);
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.9375rem;
+  line-height: 1.7;
+}
+
+.stories-disclosure strong {
+  color: #ffc107;
+}
+
+.stories-disclosure a {
+  color: #ffc107;
+}
+
+/* Provenance lines. Both exist because a number on this site now has to say
+   where it came from and, where it is somebody else's live counter, that it
+   will drift. Deliberately quiet: they are for the reader who checks, and
+   they should not compete with the figure they qualify. */
+.petition-note,
+.hero-stats-source {
+  margin: 0.75rem 0 0;
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.45);
+  max-width: 46ch;
+}
+
+.hero-stats-source {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
 
 /* Action Buttons */
