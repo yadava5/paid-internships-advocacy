@@ -8,9 +8,9 @@ Paid Internships Now is a static, multi-page site. Everything runs client-side w
 - Use lightweight, dependency-minimal JavaScript for interactions and data viz.
 
 ## Page Map
-- `index.html` — Hero, animated wage-gap stat, CTA cards, and a small sparkline preview of the equity chart.
+- `index.html` — Hero, animated wage-gap stat, CTA cards, and a small bar preview of the unpaid-share-by-group chart.
 - `stories.html` — Filterable card grid (STEM, Govt/Policy, Non-profit) with modal details.
-- `data.html` — Tabbed Chart.js dashboard (offer rate, salary, industries, access equity).
+- `data.html` — Six full-viewport scroll sections, one Chart.js canvas each (offer rate, starting salary, Class of 2015 salary offers, unpaid share by group, unpaid share by survey instrument, unpaid share over time).
 - `survey.html` — Client-side form with thank-you state (no submission backend).
 - `legal.html` — Cards linking to key federal guidance/resources.
 - `involved.html` — Action center with toggled sections (petition, email template, campaign, share links).
@@ -18,16 +18,17 @@ Paid Internships Now is a static, multi-page site. Everything runs client-side w
 
 ## Data & Flow
 - Data source: `assets/data/chart_data.json`.
-  - Structure keys: `offer_rate`, `salary_comparison`, `industry_distribution`, `access_equity`.
-  - Home sparkline (`homeMiniChart.js`) and all Data page charts (`dataCharts.js`) read from the same JSON for consistency.
+  - Structure keys: `offer_rate`, `salary_comparison`, `salary_offers_2015`, `unpaid_by_group`, `unpaid_by_instrument`, `unpaid_over_time`.
+  - Every dataset carries a `title` and a `source` alongside its `labels` and `data`. The `source` string is the citation a reader sees: `dataCharts.js` renders it under the canvas at runtime, so no citation is hand-typed into `data.html` and a figure cannot drift away from the publication it is attributed to.
+  - Home preview chart (`homeMiniChart.js`, reads `unpaid_by_group`) and all Data page charts (`dataCharts.js`) read from the same JSON for consistency.
 - Fetch logic: vanilla `fetch` + Chart.js instantiation; errors log to console without breaking the page.
 
 ## JavaScript Modules
 - `js/nav.js` — Highlights the active nav link based on the current path.
 - `js/counters.js` — Animated numeric counter for home-page salary differential.
-- `js/homeMiniChart.js` — Lazy-loads the mini line chart on the homepage using JSON data.
+- `js/homeMiniChart.js` — Lazy-loads the homepage preview bar chart using JSON data.
 - `js/stories.js` — Button-driven filtering of story cards via `data-category` attributes.
-- `js/dataCharts.js` — Configures four Chart.js instances (doughnut, bar, stacked bar, line) using shared base options.
+- `js/dataCharts.js` — Configures six Chart.js instances (five bar, one line) using shared base options, renders each dataset's citation under its canvas, and drives the data page's scroll transforms.
 
 ## Styling System
 - Base styles via Bootstrap 5.3.3 + Bootstrap Icons (CDN).

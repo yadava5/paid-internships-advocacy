@@ -43,10 +43,9 @@
   <div class="data-section-bg"></div>
   <div class="data-content">
     <div class="data-text">
-      <span class="data-number">72%</span>
+      <span class="data-number">72.2%</span>
       <h2 class="data-title">Job Offer Rate</h2>
-      <p class="data-subtitle">of paid interns receive job offers after graduation, compared to just <strong>44%</strong> for unpaid interns and <strong>36.5%</strong> for those with no internship experience.</p>
-      <p class="data-source"><i class="bi bi-journal-text"></i> NACE, Class of 2022</p>
+      <p class="data-subtitle">of paid interns who applied for a job came away with at least one offer — against <strong>43.9%</strong> of unpaid interns and <strong>36.5%</strong> of students with no internship at all. Read the base carefully: these are students who <em>applied</em>, not every graduate, and the offers counted are from private, for-profit employers.</p>
     </div>
     <div class="data-visual">
       <div class="chart-wrapper">
@@ -65,10 +64,9 @@
   <div class="data-section-bg"></div>
   <div class="data-content reverse">
     <div class="data-text">
-      <span class="data-number">$64k</span>
+      <span class="data-number">$20k</span>
       <h2 class="data-title">Starting Salary</h2>
-      <p class="data-subtitle">Paid interns earn nearly <strong>$17,000 more</strong> in their first job compared to unpaid interns. That gap compounds over a career.</p>
-      <p class="data-source"><i class="bi bi-journal-text"></i> NACE Salary Survey, 2022</p>
+      <p class="data-subtitle">Paid interns reported a median starting salary of <strong>$62,500</strong>. Unpaid interns reported <strong>$42,500</strong> — a gap of <strong>$20,000</strong> in year one, before it has had any time to compound. NACE published no comparable salary for students with no internship, so this chart has two bars and not three.</p>
     </div>
     <div class="data-visual">
       <div class="chart-wrapper">
@@ -82,19 +80,18 @@
   </div>
 </section>
 
-<!-- ===== Section 3: Salary Growth Over Time ========================== -->
-<section class="data-section" id="growth-section" data-chart="growth">
+<!-- ===== Section 3: Class of 2015 Salary Offers ====================== -->
+<section class="data-section" id="offers2015-section" data-chart="offers2015">
   <div class="data-section-bg"></div>
   <div class="data-content">
     <div class="data-text">
-      <span class="data-number">$44k</span>
-      <h2 class="data-title">The 10-Year Gap</h2>
-      <p class="data-subtitle">difference in salary by Year 10 between paid and unpaid intern alumni. The pay gap doesn't close—it <strong>widens</strong> over time.</p>
-      <p class="data-source"><i class="bi bi-journal-text"></i> Federal Reserve Bank of New York, 2023</p>
+      <span class="data-number unpaid-highlight">$4,197</span>
+      <h2 class="data-title">Worse Than No Internship At All</h2>
+      <p class="data-subtitle">In NACE's Class of 2015 survey, graduates who had done an <strong>unpaid</strong> internship were offered a median of <strong>$34,375</strong> — <strong>$4,197 less</strong> than classmates who had done <strong>no internship</strong> at all ($38,572). Paid interns were offered $53,521. On this measure an unpaid internship did not merely pay less than a paid one. It polled below doing nothing.</p>
     </div>
     <div class="data-visual">
       <div class="chart-wrapper">
-        <canvas id="growthChart"></canvas>
+        <canvas id="salaryOffersChart"></canvas>
       </div>
     </div>
   </div>
@@ -104,19 +101,18 @@
   </div>
 </section>
 
-<!-- ===== Section 4: Industry Breakdown =============================== -->
-<section class="data-section" id="industry-section" data-chart="industry">
+<!-- ===== Section 4: Who Goes Unpaid ================================== -->
+<section class="data-section" id="groups-section" data-chart="groups">
   <div class="data-section-bg"></div>
   <div class="data-content reverse">
     <div class="data-text">
-      <span class="data-number unpaid-highlight">82%</span>
-      <h2 class="data-title">Industry Divide</h2>
-      <p class="data-subtitle">of non-profit internships are unpaid, compared to only <strong>15%</strong> in tech. Students passionate about public service face the steepest barriers.</p>
-      <p class="data-source"><i class="bi bi-journal-text"></i> UW-Madison Research, 2023</p>
+      <span class="data-number unpaid-highlight">49.4%</span>
+      <h2 class="data-title">Who Goes Unpaid?</h2>
+      <p class="data-subtitle">of Black interns in the Class of 2023 worked unpaid — the highest share of any group NACE reports, against an average of <strong>40.8%</strong> across all interns. The burden is not carried evenly: <strong>45.1%</strong> of Hispanic interns and 41.9% of White interns went unpaid, against 25.8% of Asian interns. <strong>48.5%</strong> of women went unpaid, against 23.6% of men. Pell Grant recipients (46.5%) and first-generation students (46.2%) both sit above the average. Each bar is the share <em>within</em> that group — race is race and income is income, and this chart does not swap one for the other.</p>
     </div>
     <div class="data-visual">
       <div class="chart-wrapper">
-        <canvas id="industryChart"></canvas>
+        <canvas id="unpaidGroupChart"></canvas>
       </div>
     </div>
   </div>
@@ -126,19 +122,18 @@
   </div>
 </section>
 
-<!-- ===== Section 5: Equity Gap ======================================= -->
-<section class="data-section" id="equity-section" data-chart="equity">
+<!-- ===== Section 5: Two Surveys, One Year ============================ -->
+<section class="data-section" id="surveys-section" data-chart="surveys">
   <div class="data-section-bg"></div>
   <div class="data-content">
     <div class="data-text">
-      <span class="data-number unpaid-highlight">76%</span>
-      <h2 class="data-title">Who Gets Paid?</h2>
-      <p class="data-subtitle">of low-income students end up in unpaid internships, compared to <strong>42%</strong> of their wealthier peers. Unpaid labor perpetuates inequality.</p>
-      <p class="data-source"><i class="bi bi-journal-text"></i> Harvard Education Research, 2021</p>
+      <span class="data-number">19 pts</span>
+      <h2 class="data-title">The Number Nobody Agrees On</h2>
+      <p class="data-subtitle">Ask two credible surveys about the same year and you get two different answers. NACE puts the unpaid share of the Class of 2023 at <strong>40.8%</strong>. The National Survey of College Internships puts it at <strong>31%</strong> at four-year institutions and <strong>50%</strong> at two-year ones — ten points below NACE and nine above it, and <strong>nineteen points</strong> apart from each other. That spread is a real limit on how precisely anyone can state the unpaid share. A single decimal figure is one instrument's answer, not a settled fact.</p>
     </div>
     <div class="data-visual">
       <div class="chart-wrapper">
-        <canvas id="equityChart"></canvas>
+        <canvas id="surveyGapChart"></canvas>
       </div>
     </div>
   </div>
@@ -148,63 +143,18 @@
   </div>
 </section>
 
-<!-- ===== Section 6: Time Trend ======================================= -->
-<section class="data-section" id="trend-section" data-chart="trend">
+<!-- ===== Section 6: Unpaid Share Over Time =========================== -->
+<section class="data-section" id="overtime-section" data-chart="overtime">
   <div class="data-section-bg"></div>
   <div class="data-content reverse">
     <div class="data-text">
-      <span class="data-number">66%</span>
-      <h2 class="data-title">Progress Being Made</h2>
-      <p class="data-subtitle">of internships are now paid in 2025, up from just <strong>48%</strong> in 2015. Advocacy works—but we're not done yet.</p>
-      <p class="data-source"><i class="bi bi-journal-text"></i> NACE Historical Data, 2015-2025</p>
+      <span class="data-number unpaid-highlight">40.8%</span>
+      <h2 class="data-title">Progress, Not Victory</h2>
+      <p class="data-subtitle">Unpaid internships are getting rarer. <strong>53.5%</strong> of internships were unpaid in NACE's Class of 2014 survey; by the Class of 2023 it was <strong>40.8%</strong> — a fall of nearly thirteen points in nine years. Two snapshots, not a continuous series: the line between them is dashed because nobody measured the years in between on the same basis. Advocacy moved this. Two in five students still work for free.</p>
     </div>
     <div class="data-visual">
       <div class="chart-wrapper">
-        <canvas id="trendChart"></canvas>
-      </div>
-    </div>
-  </div>
-  <div class="section-scroll-hint">
-    <span>Scroll to explore</span>
-    <i class="bi bi-chevron-down"></i>
-  </div>
-</section>
-
-<!-- ===== Section 7: Hours Worked ===================================== -->
-<section class="data-section" id="hours-section" data-chart="hours">
-  <div class="data-section-bg"></div>
-  <div class="data-content">
-    <div class="data-text">
-      <span class="data-number unpaid-highlight">42%</span>
-      <h2 class="data-title">Work vs. Pay</h2>
-      <p class="data-subtitle">of unpaid interns work 40+ hours per week—more than their paid counterparts. Full-time work deserves full-time pay.</p>
-      <p class="data-source"><i class="bi bi-journal-text"></i> Economic Policy Institute, 2022</p>
-    </div>
-    <div class="data-visual">
-      <div class="chart-wrapper">
-        <canvas id="hoursChart"></canvas>
-      </div>
-    </div>
-  </div>
-  <div class="section-scroll-hint">
-    <span>Scroll to explore</span>
-    <i class="bi bi-chevron-down"></i>
-  </div>
-</section>
-
-<!-- ===== Section 8: Mental Health Impact ============================= -->
-<section class="data-section" id="mental-section" data-chart="mental">
-  <div class="data-section-bg"></div>
-  <div class="data-content reverse">
-    <div class="data-text">
-      <span class="data-number unpaid-highlight">72%</span>
-      <h2 class="data-title">The Human Cost</h2>
-      <p class="data-subtitle">of unpaid interns report significant financial anxiety, compared to <strong>22%</strong> of paid interns. Mental health matters.</p>
-      <p class="data-source"><i class="bi bi-journal-text"></i> American Psychological Association, 2023</p>
-    </div>
-    <div class="data-visual">
-      <div class="chart-wrapper">
-        <canvas id="mentalChart"></canvas>
+        <canvas id="unpaidOverTimeChart"></canvas>
       </div>
     </div>
   </div>

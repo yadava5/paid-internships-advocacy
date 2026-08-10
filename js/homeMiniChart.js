@@ -5,19 +5,23 @@ document.addEventListener('DOMContentLoaded', () => {
   fetch('assets/data/chart_data.json')
     .then(res => res.json())
     .then(data => {
+      // Share of interns whose internship was unpaid, by group.
+      // NACE, Class of 2023 (Table 2) — see assets/data/chart_data.json.
+      // Bars, not a line: these categories have no order, so a line would
+      // draw a trend that does not exist.
+      const groups = data.unpaid_by_group;
+
       new Chart(ctx, {
-        type: 'line',
+        type: 'bar',
         data: {
-          labels: data.access_equity.labels,
+          labels: groups.labels,
           datasets: [
             {
-              label: 'Paid Internship Access',
-              data: data.access_equity.paid,
-              borderColor: '#0d6efd',
-              backgroundColor: 'rgba(13,110,253,0.1)',
-              tension: 0.4,
-              fill: true,
-              pointRadius: 0
+              label: 'Share of internships unpaid',
+              data: groups.data,
+              backgroundColor: groups.labels.map(l => l === 'All interns' ? '#ffc107' : '#ff5252'),
+              borderRadius: 3,
+              borderSkipped: false
             }
           ]
         },
